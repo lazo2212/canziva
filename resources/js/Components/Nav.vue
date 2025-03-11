@@ -1,46 +1,46 @@
 <script setup>
+import { ref } from "vue";
 import { Link } from "@inertiajs/vue3";
 import Submenu from "./Submenu.vue";
+
+const showSubmenu = ref(false);
 </script>
+
 <template>
     <header
-        class="fixed top-0 w-full flex justify-between items-center bg-white py-2 shadow"
+        class="fixed top-0 w-full flex justify-between items-center bg-white p-2 shadow"
     >
-        <Link
-            href="/"
-            class="text-xl rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none"
+        <Link href="/" class="text-xl px-3 py-2 text-black hover:text-black/70"
             >CANZIVA</Link
         >
+
         <nav class="flex gap-12">
-            <Link
-                href="/"
-                class="flex items-center gap-1 rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none"
+            <div
+                @mouseenter="showSubmenu = true"
+                @mouseleave="showSubmenu = false"
+                class="relative"
             >
-                PROIZVODI
-                <svg
-                    width="12"
-                    height="7"
-                    viewBox="0 0 12 7"
-                    fill="black"
-                    xmlns="http://www.w3.org/2000/svg"
+                <Link
+                    href="#"
+                    class="flex items-center gap-1 px-3 py-2 text-black hover:text-black/70"
                 >
-                    <path
-                        d="M1 1L6 6L8.5 3.5L11 1"
-                        stroke="white"
-                        stroke-linecap="round"
-                    />
-                </svg>
-            </Link>
-            <Link
-                href="/"
-                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none"
-            >
+                    PROIZVODI
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="black">
+                        <path
+                            d="M1 1L6 6L8.5 3.5L11 1"
+                            stroke="white"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </Link>
+
+                <Submenu :visible="showSubmenu" />
+            </div>
+
+            <Link href="/" class="px-3 py-2 text-black hover:text-black/70">
                 O NAMA
             </Link>
-            <Link
-                href="/"
-                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none"
-            >
+            <Link href="/" class="px-3 py-2 text-black hover:text-black/70">
                 KONTAKT
             </Link>
         </nav>
@@ -66,7 +66,5 @@ import Submenu from "./Submenu.vue";
                 </svg>
             </Link>
         </div>
-
-        <Submenu />
     </header>
 </template>
