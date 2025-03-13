@@ -5,9 +5,9 @@ defineOptions({ layout: Layout });
 </script>
 
 <template>
-    <Head title="Home" />
+    <Head title="O nama" />
 
     <div class="h-screen w-full">
-        <h1 class="text-4xl">Canziva</h1>
+        <h1 class="text-4xl">O nama</h1>
     </div>
 </template>

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#app {
-    height: 100%;
+@layer base {
+    * {
+        @apply box-border;
+    }
 }
