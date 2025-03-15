@@ -15,6 +15,20 @@ Route::get('/about', function () {
     return Inertia::render('About');
 })->name('about');
 
+Route::get('/product/cbd', function () {
+    return Inertia::render('Product/CBD');
+})->name('product.CBD');
+
+Route::get('/product/balance', function () {
+    return Inertia::render('Product/Balance');
+})->name('product.balance');
+
+Route::get('/product/cbg', function () {
+    return Inertia::render('Product/CBG');
+})->name('product.CBG');
+
+
+// ********************************************************************************************************************
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
