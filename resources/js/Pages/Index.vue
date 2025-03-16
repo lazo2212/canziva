@@ -37,22 +37,34 @@ defineOptions({ layout: Layout });
         </span>
     </div>
 
-    <div class="h-[60vh] flex items-center justify-center p-20">
+    <div class="h-[60vh] flex items-center justify-center p-14">
         <div
             class="bg-[url('/images/cbd-pasta.jpg')] bg-no-repeat h-full w-1/2"
         ></div>
-        <div class="h-full w-1/2 relative px-20">
-            <h1 class="text-4xl font-bold text-center mt-10">CBD PASTA</h1>
-            <p class="text-center mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quibusdam dolorum quia quos
-                exercitationem voluptatem quas quidem nemo. Quisquam, quidem
-                voluptates. Quisquam, quidem voluptates.
+        <div class="h-full w-1/2 relative ps-24">
+            <h2 class="text-3xl font-bold">
+                <span class="text-green-700">CBD</span> extrakt punog spektra
+            </h2>
+            <p class="mt-2">
+                Sadrži 5000mg kanabidiola dobivenog iz cvjetova industrijske
+                konoplje postupkom ekstrakcije CO₂, kokosovo ulje i pčelinji
+                vosak.
+            </p>
+            <ul class="list-disc ps-10 mt-2">
+                <li>99% CBD (5000mg)</li>
+                <li>THC ≤ 0,2%</li>
+                <li>Sadržaj: 5ml CBD smola</li>
+            </ul>
+            <p class="mt-2">
+                Ekstrakt je konzistencije slične smoli, iznimnih terapeutskih
+                svojstava, dobiven iz cvjetova industrijske konoplje kojeg radi
+                prevladavajućeg aktivnog sastojka kanabidiola nazivamo i CBD
+                pasta.
             </p>
 
             <img
                 class="absolute bottom-0 left-0"
-                src="/images/canabinoid.svg"
+                src="/images/canabinoid-cbd.svg"
                 alt="canabinoid"
                 width="400"
                 height="200"
@@ -60,19 +72,32 @@ defineOptions({ layout: Layout });
         </div>
     </div>
 
-    <div class="h-[60vh] flex items-center justify-center p-20">
-        <div class="h-full w-1/2 relative px-20">
-            <h1 class="text-4xl font-bold text-center mt-10">CBD PASTA</h1>
-            <p class="text-center mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quibusdam dolorum quia quos
-                exercitationem voluptatem quas quidem nemo. Quisquam, quidem
-                voluptates. Quisquam, quidem voluptates.
+    <div class="h-[60vh] flex items-center justify-center p-14">
+        <div class="h-full w-1/2 relative ps-24">
+            <h2 class="text-3xl font-bold">
+                <span class="text-purple-700">BALANCE</span> extrakt punog
+                spektra
+            </h2>
+            <p class="mt-2">
+                Sadrži 5000mg kanabidiola dobivenog iz cvjetova industrijske
+                konoplje postupkom ekstrakcije CO₂, kokosovo ulje i pčelinji
+                vosak.
+            </p>
+            <ul class="list-disc ps-10 mt-2">
+                <li>50% CBD (2500mg) i 50% CBG (2500mg)</li>
+                <li>THC ≤ 0,2%</li>
+                <li>Sadržaj: 2.5ml CBD i 2.5ml CBG smola</li>
+            </ul>
+            <p class="mt-2">
+                Ekstrakt je konzistencije slične smoli, iznimnih terapeutskih
+                svojstava, dobiven iz cvjetova industrijske konoplje kojeg radi
+                prevladavajućeg aktivnog sastojka kanabidiola nazivamo i BALANCE
+                pasta.
             </p>
 
             <img
                 class="absolute bottom-0 left-0"
-                src="/images/canabinoid.svg"
+                src="/images/canabinoid-balance.svg"
                 alt="canabinoid"
                 width="400"
                 height="200"
@@ -83,22 +108,34 @@ defineOptions({ layout: Layout });
         ></div>
     </div>
 
-    <div class="h-[60vh] flex items-center justify-center p-20">
+    <div class="h-[60vh] flex items-center justify-center p-14">
         <div
             class="bg-[url('/images/cbd-pasta.jpg')] bg-no-repeat h-full w-1/2"
         ></div>
-        <div class="h-full w-1/2 relative px-20">
-            <h1 class="text-4xl font-bold text-center mt-10">CBD PASTA</h1>
-            <p class="text-center mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quibusdam dolorum quia quos
-                exercitationem voluptatem quas quidem nemo. Quisquam, quidem
-                voluptates. Quisquam, quidem voluptates.
+        <div class="h-full w-1/2 relative ps-24">
+            <h2 class="text-3xl font-bold">
+                <span class="text-orange-700">CBG</span> extrakt punog spektra
+            </h2>
+            <p class="mt-2">
+                Sadrži 5000mg kanabidiola dobivenog iz cvjetova industrijske
+                konoplje postupkom ekstrakcije CO₂, kokosovo ulje i pčelinji
+                vosak.
+            </p>
+            <ul class="list-disc ps-10 mt-2">
+                <li>99% CBG (5000mg)</li>
+                <li>THC ≤ 0,2%</li>
+                <li>Sadržaj: 5ml CBG smola</li>
+            </ul>
+            <p class="mt-2">
+                Ekstrakt je konzistencije slične smoli, iznimnih terapeutskih
+                svojstava, dobiven iz cvjetova industrijske konoplje kojeg radi
+                prevladavajućeg aktivnog sastojka kanabidiola nazivamo i CBG
+                pasta.
             </p>
 
             <img
                 class="absolute bottom-0 left-0"
-                src="/images/canabinoid.svg"
+                src="/images/canabinoid-cbg.svg"
                 alt="canabinoid"
                 width="400"
                 height="200"
