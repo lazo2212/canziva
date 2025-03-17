@@ -1,7 +1,9 @@
 <script setup>
 import { Head } from "@inertiajs/vue3";
 import Layout from "@/Layouts/Layout.vue";
+import Nav from "@/Components/Nav.vue";
 import HeroSection from "@/Components/HeroSection.vue";
+import { ref } from "vue";
 
 const traits = [
     "VANJSKI UZGOJ",
@@ -11,12 +13,15 @@ const traits = [
     "THC ≤ 0,2%",
 ];
 
+const cartItems = ref(10);
+
 defineOptions({ layout: Layout });
 </script>
 
 <template>
     <Head title="Home" />
 
+    <Nav :cart-items="cartItems" />
     <HeroSection />
 
     <div class="flex justify-between gap-14 py-10 mt-12 border-y-2">

@@ -15,7 +15,7 @@ const products = ref([
             color: "text-green-700",
             bg: "bg-green-700",
             border: "border-green-700",
-            dropShadow: "drop-shadow-[0_0_70px_rgb(21,128,61)]",
+            dropShadow: "drop-shadow-[0_0_80px_rgb(21,128,61)]",
         },
     },
     {
@@ -30,7 +30,7 @@ const products = ref([
             color: "text-purple-700",
             bg: "bg-purple-700",
             border: "border-purple-700",
-            dropShadow: "drop-shadow-[0_0_70px_rgb(126,34,206)]",
+            dropShadow: "drop-shadow-[0_0_80px_rgb(126,34,206)]",
         },
     },
     {
@@ -45,7 +45,7 @@ const products = ref([
             color: "text-orange-700",
             bg: "bg-orange-700",
             border: "border-orange-700",
-            dropShadow: "drop-shadow-[0_0_70px_rgb(194,65,12)]",
+            dropShadow: "drop-shadow-[0_0_80px_rgb(194,65,12)]",
         },
     },
 ]);
