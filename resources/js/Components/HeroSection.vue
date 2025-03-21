@@ -5,6 +5,7 @@ import gsap from "gsap";
 const products = ref([
     {
         title: "CBD",
+        // benefits : [{title: string, image: string}, ...]
         benefits: [
             "pomaže pri spavanju",
             "djeluje protuupalno",
@@ -12,9 +13,10 @@ const products = ref([
             "smanjuje stres i anksioznost",
         ],
         style: {
-            color: "text-green-700",
+            color: "text-green-600",
             bg: "bg-green-700",
             border: "border-green-700",
+            linearGradient: "from-green-700 to-green-400",
             dropShadow: "drop-shadow-[0_0_80px_rgb(21,128,61)]",
         },
     },
@@ -27,9 +29,10 @@ const products = ref([
             "pomaže pri spavanju",
         ],
         style: {
-            color: "text-purple-700",
+            color: "text-purple-600",
             bg: "bg-purple-700",
             border: "border-purple-700",
+            linearGradient: "from-purple-700 to-purple-400",
             dropShadow: "drop-shadow-[0_0_80px_rgb(126,34,206)]",
         },
     },
@@ -42,13 +45,18 @@ const products = ref([
             "ublažava bol",
         ],
         style: {
-            color: "text-orange-700",
+            color: "text-orange-600",
             bg: "bg-orange-700",
             border: "border-orange-700",
+            linearGradient: "from-orange-700 to-orange-400",
             dropShadow: "drop-shadow-[0_0_80px_rgb(194,65,12)]",
         },
     },
 ]);
+
+const props = defineProps({
+    addToCart: Function,
+});
 
 const currentIndex = ref(0);
 const currentProduct = ref(products.value[currentIndex.value]);
@@ -58,7 +66,7 @@ const lastChangeTime = ref(Date.now());
 
 const changeProduct = (index) => {
     const now = Date.now();
-    if (index === currentIndex.value || now - lastChangeTime.value < 1000)
+    if (index === currentIndex.value || now - lastChangeTime.value < 400)
         return;
 
     lastChangeTime.value = now;
@@ -66,7 +74,7 @@ const changeProduct = (index) => {
     gsap.to(".product-card", {
         opacity: 0,
         scale: 0.9,
-        duration: 0.5,
+        duration: 0.4,
         onComplete: () => {
             currentIndex.value = index;
             currentProduct.value = products.value[index];
@@ -75,7 +83,7 @@ const changeProduct = (index) => {
                 gsap.fromTo(
                     ".product-card",
                     { opacity: 0, scale: 1.1 },
-                    { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }
+                    { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }
                 );
             });
         },
@@ -105,7 +113,7 @@ const startAutoChange = () => {
     interval = setInterval(() => {
         let nextIndex = (currentIndex.value + 1) % products.value.length;
         changeProduct(nextIndex);
-    }, 10000);
+    }, 7000);
 };
 
 const stopAutoChange = () => {
@@ -135,40 +143,29 @@ onUnmounted(() => {
         >
             <h2 class="text-6xl select-none">
                 <span
-                    :class="`${currentProduct.style.color} font-bold drop-shadow-[0_2px_2px_rgb(0,0,0)]`"
+                    class="font-bold drop-shadow-[0_2px_2px_rgb(0,0,0)]"
+                    :class="currentProduct.style.color"
                 >
                     {{ currentProduct.title }}
                 </span>
                 ekstrakt punog spektra
             </h2>
             <ul class="p-10 select-none">
-                <li class="mb-4 flex items-center">
+                <li
+                    class="mb-4 flex items-center"
+                    v-for="(benefit, index) in currentProduct.benefits"
+                    :key="index"
+                >
                     <span
                         class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-10 h-10 inline-block me-3"
                     ></span
-                    >{{ currentProduct.benefits[0] }}
-                </li>
-                <li class="mb-4 flex items-center">
-                    <span
-                        class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-10 h-10 inline-block me-3"
-                    ></span
-                    >{{ currentProduct.benefits[1] }}
-                </li>
-                <li class="mb-4 flex items-center">
-                    <span
-                        class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-10 h-10 inline-block me-3"
-                    ></span
-                    >{{ currentProduct.benefits[2] }}
-                </li>
-                <li class="flex items-center">
-                    <span
-                        class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-10 h-10 inline-block me-3"
-                    ></span
-                    >{{ currentProduct.benefits[3] }}
+                    >{{ benefit }}
                 </li>
             </ul>
             <button
-                :class="`px-10 py-6 text-4xl ${currentProduct.style.bg} text-white rounded-lg shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none`"
+                @click="addToCart"
+                class="px-10 py-6 text-4xl bg-gradient-to-br text-white rounded-lg font-bold shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none"
+                :class="currentProduct.style.linearGradient"
             >
                 KUPI {{ currentProduct.title }}
             </button>
@@ -190,10 +187,10 @@ onUnmounted(() => {
                     startAutoChange();
                 "
                 :class="[
-                    'px-6 py-4 text-2xl font-bold rounded-md transition-all duration-150 select-none',
+                    'px-6 py-4 text-xl font-bold rounded-md transition-all duration-150 select-none border-4 border-y-0',
                     index === currentIndex
-                        ? `border-4 border-t-0 border-black ${product.style.border} ${product.style.color}  shadow-sm shadow-black`
-                        : '',
+                        ? `${product.style.border} ${product.style.color}`
+                        : 'border-transparent text-gray-600',
                 ]"
             >
                 {{ product.title }}
@@ -204,6 +201,6 @@ onUnmounted(() => {
 
 <style scoped>
 .button-container + .button-container {
-    border-left: 2px solid black;
+    border-left: 2px solid #4b5563;
 }
 </style>

@@ -13,7 +13,11 @@ const traits = [
     "THC ≤ 0,2%",
 ];
 
-const cartItems = ref(10);
+const cartItems = ref(0);
+
+const addToCart = () => {
+    cartItems.value++;
+};
 
 defineOptions({ layout: Layout });
 </script>
@@ -22,9 +26,10 @@ defineOptions({ layout: Layout });
     <Head title="Home" />
 
     <Nav :cart-items="cartItems" />
-    <HeroSection />
 
-    <div class="flex justify-between gap-14 py-10 mt-12 border-y-2">
+    <HeroSection :add-to-cart="addToCart" />
+
+    <div class="flex justify-between gap-14 py-12 mt-12 border-y-2">
         <span
             class="relative flex justify-center items-center h-36 w-36"
             v-for="trait in traits"

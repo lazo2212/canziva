@@ -68,7 +68,7 @@ const props = defineProps({
             <div class="flex gap-2">
                 <Link
                     href="#"
-                    class="relative px-3 py-2 transition hover:fill-black/60"
+                    class="relative px-3 py-2 me-3 transition hover:fill-black/60"
                 >
                     <svg class="svg-icon h-8" viewBox="0 0 20 20">
                         <path
@@ -76,6 +76,7 @@ const props = defineProps({
                         ></path>
                     </svg>
                     <span
+                        v-if="cartItems > 0"
                         class="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-xs flex items-center justify-center rounded-full"
                         >{{ cartItems }}</span
                     >
@@ -100,16 +101,16 @@ const props = defineProps({
                         "
                     >
                         <Link
-                            href="/#"
+                            href="/login"
                             class="px-3 py-2 text-black hover:text-black/70"
                         >
-                            Sing in
+                            Prijava
                         </Link>
                         <Link
-                            href="/#"
+                            href="/register"
                             class="px-3 py-2 text-black hover:text-black/70"
                         >
-                            Register
+                            Registriracija
                         </Link>
                     </div>
                 </Link>

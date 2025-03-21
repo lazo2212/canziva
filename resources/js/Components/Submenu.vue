@@ -14,24 +14,21 @@ const props = defineProps({
     >
         <Link
             href="/product/cbd"
-            class="w-1/4 h-64 bg-[url('/images/cbd-pasta.jpg')] bg-top rounded-2xl text-white text-2xl p-4 hover:shadow-md hover:shadow-black transition duration-300 shadow-none active:shadow-none active:translate-y-1"
+            class="w-1/4 h-64 rounded-2xl bg-gradient-to-br from-green-800 to-green-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 shadow-none active:shadow-none active:translate-y-1"
         >
-            <span class="text-green-600 font-bold">CBD</span>
-            <p class="ms-2 inline">extrakt punog spektra</p>
+            <span class="font-bold">CBD</span>
         </Link>
         <Link
             href="/product/balance"
-            class="w-1/4 h-64 bg-[url('/images/cbd-pasta.jpg')] bg-top rounded-2xl text-white text-2xl p-4 hover:shadow-md hover:shadow-black transition duration-300 shadow-none active:shadow-none active:translate-y-1"
+            class="w-1/4 h-64 rounded-2xl bg-gradient-to-br from-purple-800 to-purple-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 shadow-none active:shadow-none active:translate-y-1"
         >
-            <span class="text-purple-600 font-bold">BALANCE</span>
-            <p class="ms-2 inline">extrakt punog spektra</p>
+            <span class="font-bold">BALANCE</span>
         </Link>
         <Link
             href="/product/cbg"
-            class="w-1/4 h-64 bg-[url('/images/cbd-pasta.jpg')] bg-top rounded-2xl text-white text-2xl p-4 hover:shadow-md hover:shadow-black transition duration-300 shadow-none active:shadow-none active:translate-y-1"
+            class="w-1/4 h-64 rounded-2xl bg-gradient-to-br from-orange-800 to-orange-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 shadow-none active:shadow-none active:translate-y-1"
         >
-            <span class="text-orange-600 font-bold">CBG</span>
-            <p class="ms-2 inline">extrakt punog spektra</p>
+            <span class="font-bold">CBG</span>
         </Link>
     </div>
 </template>
