@@ -17,7 +17,8 @@ const products = ref([
             bg: "bg-green-700",
             border: "border-green-700",
             linearGradient: "from-green-700 to-green-400",
-            dropShadow: "drop-shadow-[0_0_80px_rgb(21,128,61)]",
+            background: "bg-green-50",
+            shadow: "shadow-green",
         },
     },
     {
@@ -33,7 +34,8 @@ const products = ref([
             bg: "bg-purple-700",
             border: "border-purple-700",
             linearGradient: "from-purple-700 to-purple-400",
-            dropShadow: "drop-shadow-[0_0_80px_rgb(126,34,206)]",
+            background: "bg-purple-50",
+            shadow: "shadow-purple",
         },
     },
     {
@@ -49,7 +51,8 @@ const products = ref([
             bg: "bg-orange-700",
             border: "border-orange-700",
             linearGradient: "from-orange-700 to-orange-400",
-            dropShadow: "drop-shadow-[0_0_80px_rgb(194,65,12)]",
+            background: "bg-orange-50",
+            shadow: "shadow-orange",
         },
     },
 ]);
@@ -135,13 +138,18 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="w-full flex justify-center p-24 product-card">
+    <div
+        class="w-full flex justify-center mt-24 p-20 product-card rounded-lg shadow-md"
+        :class="[currentProduct.style.background, currentProduct.style.shadow]"
+    >
         <div
-            class="w-1/2 flex flex-col items-start justify-center product-content"
+            class="w-3/5 flex flex-col items-start justify-center product-content"
             @mouseenter="stopAutoChange"
             @mouseleave="startAutoChange"
         >
-            <h2 class="text-6xl select-none">
+            <h2
+                class="text-4xl xl:text-5xl 2xl:text-6xl select-none font-righteous uppercase"
+            >
                 <span
                     class="font-bold drop-shadow-[0_2px_2px_rgb(0,0,0)]"
                     :class="currentProduct.style.color"
@@ -157,28 +165,27 @@ onUnmounted(() => {
                     :key="index"
                 >
                     <span
-                        class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-10 h-10 inline-block me-3"
+                        class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-6 h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 inline-block me-3"
                     ></span
                     >{{ benefit }}
                 </li>
             </ul>
             <button
                 @click="addToCart"
-                class="px-10 py-6 text-4xl bg-gradient-to-br text-white rounded-lg font-bold shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none"
+                class="px-8 py-4 xl:px-9 xl:py-5 2xl:px-10 2xl:py-6 text-md xl:text-2xl 2xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-righteous"
                 :class="currentProduct.style.linearGradient"
             >
                 KUPI {{ currentProduct.title }}
             </button>
         </div>
-        <div class="w-1/2">
+        <div class="w-2/5">
             <div
-                class="product-image w-full h-[55vh] rounded-lg bg-[url('/images/cbd-pasta.svg')] bg-contain bg-no-repeat bg-center filter"
-                :class="currentProduct.style.dropShadow"
+                class="product-image w-full h-[40vh] xl:h-[55vh] rounded-lg bg-[url('/images/cbd-pasta.svg')] bg-contain bg-no-repeat bg-center filter"
             ></div>
         </div>
     </div>
 
-    <div class="flex justify-center p-5">
+    <div class="flex align-center justify-center p-10">
         <div class="button-container px-6" v-for="(product, index) in products">
             <button
                 :key="index"
@@ -187,7 +194,7 @@ onUnmounted(() => {
                     startAutoChange();
                 "
                 :class="[
-                    'px-6 py-4 text-xl font-bold rounded-md transition-all duration-150 select-none border-4 border-y-0',
+                    'px-6 py-4 text-md xl:text-lg 2xl:text-2xl font-bold rounded-md transition-all duration-150 select-none border-4 border-y-0 font-righteous',
                     index === currentIndex
                         ? `${product.style.border} ${product.style.color}`
                         : 'border-transparent text-gray-600',
@@ -201,6 +208,6 @@ onUnmounted(() => {
 
 <style scoped>
 .button-container + .button-container {
-    border-left: 2px solid #4b5563;
+    border-left: 2px solid #e2e8f0;
 }
 </style>

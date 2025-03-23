@@ -4,6 +4,7 @@ import { Link } from "@inertiajs/vue3";
 import Submenu from "./Submenu.vue";
 
 const showSubmenu = ref(false);
+const showCartMenu = ref(false);
 const showUserMenu = ref(false);
 
 const props = defineProps({
@@ -69,6 +70,8 @@ const props = defineProps({
                 <Link
                     href="#"
                     class="relative px-3 py-2 me-3 transition hover:fill-black/60"
+                    @mouseenter="showCartMenu = true"
+                    @mouseleave="showCartMenu = false"
                 >
                     <svg class="svg-icon h-8" viewBox="0 0 20 20">
                         <path
@@ -80,6 +83,31 @@ const props = defineProps({
                         class="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-xs flex items-center justify-center rounded-full"
                         >{{ cartItems }}</span
                     >
+                    <div
+                        class="absolute p-4 top-[60px] right-0 w-48 bg-white shadow-md transition-all duration-300 ease-in-out z-40 cursor-default select-none flex flex-col"
+                        :class="
+                            showCartMenu
+                                ? 'opacity-100 visible'
+                                : 'opacity-0 invisible'
+                        "
+                    >
+                        <div v-if="cartItems > 0" class="flex flex-col gap-2">
+                            <!-- treba napravit variablu cart i povezat dodavanje proizvoda sa košaricom-->
+                            <p>Proizvodi u košarici:</p>
+                            <p>CBD-pasta</p>
+                            <p>Cijena: {{ 100 * cartItems }}€</p>
+                            <p>Količina: {{ cartItems }}</p>
+                            <Link
+                                href="/checkout"
+                                class="px-3 py-2 text-black hover:text-black/70"
+                            >
+                                Idi na naplatu
+                            </Link>
+                        </div>
+                        <div v-else>
+                            <p>Košarica je prazna!</p>
+                        </div>
+                    </div>
                 </Link>
                 <Link
                     href="#"

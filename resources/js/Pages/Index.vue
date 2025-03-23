@@ -3,7 +3,11 @@ import { Head } from "@inertiajs/vue3";
 import Layout from "@/Layouts/Layout.vue";
 import Nav from "@/Components/Nav.vue";
 import HeroSection from "@/Components/HeroSection.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const traits = [
     "VANJSKI UZGOJ",
@@ -19,6 +23,28 @@ const addToCart = () => {
     cartItems.value++;
 };
 
+onMounted(() => {
+    gsap.utils.toArray(".parallax-section").forEach((section, index) => {
+        gsap.fromTo(
+            section,
+            { y: 150, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 100%",
+                    end: "bottom top",
+                    scrub: true,
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    });
+});
+
 defineOptions({ layout: Layout });
 </script>
 
@@ -29,7 +55,9 @@ defineOptions({ layout: Layout });
 
     <HeroSection :add-to-cart="addToCart" />
 
-    <div class="flex justify-between gap-14 py-12 mt-12 border-y-2">
+    <div
+        class="parallax-section flex justify-between gap-14 py-12 mt-12 border-y-2"
+    >
         <span
             class="relative flex justify-center items-center h-36 w-36"
             v-for="trait in traits"
@@ -54,12 +82,14 @@ defineOptions({ layout: Layout });
         </span>
     </div>
 
-    <div class="h-[60vh] flex items-center justify-center py-20">
+    <div
+        class="parallax-section h-[60vh] flex items-center justify-center bg-green-50 shadow-md shadow-green rounded-lg my-12"
+    >
         <div
-            class="bg-[url('/images/cbd-pasta.jpg')] bg-no-repeat h-full w-1/2 rounded-lg"
+            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
         ></div>
-        <div class="h-full w-1/2 relative ps-24">
-            <h2 class="text-3xl font-bold">
+        <div class="h-full w-1/2 relative p-10 ps-24">
+            <h2 class="text-3xl font-bold mb-6">
                 <span class="text-green-700">CBD</span> extrakt punog spektra
             </h2>
             <p class="mt-2">
@@ -80,7 +110,7 @@ defineOptions({ layout: Layout });
             </p>
 
             <img
-                class="absolute bottom-0 left-0"
+                class="absolute bottom-5 left-5 opacity-50"
                 src="/images/canabinoid-cbd.svg"
                 alt="canabinoid"
                 width="400"
@@ -89,9 +119,11 @@ defineOptions({ layout: Layout });
         </div>
     </div>
 
-    <div class="h-[60vh] flex items-center justify-center py-20">
-        <div class="h-full w-1/2 relative ps-24">
-            <h2 class="text-3xl font-bold">
+    <div
+        class="parallax-section h-[60vh] flex items-center justify-center bg-purple-50 shadow-md shadow-purple rounded-lg my-12"
+    >
+        <div class="h-full w-1/2 relative p-10 ps-24">
+            <h2 class="text-3xl font-bold mb-6">
                 <span class="text-purple-700">BALANCE</span> extrakt punog
                 spektra
             </h2>
@@ -113,7 +145,7 @@ defineOptions({ layout: Layout });
             </p>
 
             <img
-                class="absolute bottom-0 left-0"
+                class="absolute bottom-5 left-5 opacity-50"
                 src="/images/canabinoid-balance.svg"
                 alt="canabinoid"
                 width="400"
@@ -121,16 +153,18 @@ defineOptions({ layout: Layout });
             />
         </div>
         <div
-            class="bg-[url('/images/cbd-pasta.jpg')] bg-no-repeat h-full w-1/2 rounded-lg"
+            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
         ></div>
     </div>
 
-    <div class="h-[60vh] flex items-center justify-center py-20">
+    <div
+        class="parallax-section h-[60vh] flex items-center justify-center bg-orange-50 shadow-md shadow-orange rounded-lg my-12"
+    >
         <div
-            class="bg-[url('/images/cbd-pasta.jpg')] bg-no-repeat h-full w-1/2 rounded-lg"
+            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
         ></div>
-        <div class="h-full w-1/2 relative ps-24">
-            <h2 class="text-3xl font-bold">
+        <div class="h-full w-1/2 relative p-10 ps-24">
+            <h2 class="text-3xl font-bold mb-6">
                 <span class="text-orange-700">CBG</span> extrakt punog spektra
             </h2>
             <p class="mt-2">
@@ -151,7 +185,7 @@ defineOptions({ layout: Layout });
             </p>
 
             <img
-                class="absolute bottom-0 left-0"
+                class="absolute bottom-5 left-5 opacity-50"
                 src="/images/canabinoid-cbg.svg"
                 alt="canabinoid"
                 width="400"
