@@ -13,25 +13,25 @@ const props = defineProps({
 </script>
 
 <template>
-    <header class="fixed top-0 left-0 w-full bg-white p-2 shadow z-50">
+    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
         <nav class="flex justify-between items-center max-w-screen-2xl mx-auto">
-            <Link href="/" class="text-xl text-black hover:text-black/70"
+            <Link href="/" class="py-2"
                 ><img
-                    src="/images/canziva.svg"
+                    src="/images/logo.svg"
                     alt="CANZIVA logo"
-                    width="120px"
+                    class="h-[100px]"
             /></Link>
 
             <div class="flex gap-12">
                 <Link
                     href="/"
-                    class="relative px-3 py-2 text-black hover:text-black/70"
+                    class="relative h-[100px] flex items-center text-black hover:text-black/70 group"
                     @mouseenter="showSubmenu = true"
                     @mouseleave="showSubmenu = false"
                 >
                     <div
                         href="#"
-                        class="group flex items-center gap-1 text-black hover:text-black/70 cursor-pointer"
+                        class="group flex items-center gap-1 cursor-pointer"
                     >
                         PROIZVODI
                         <svg
@@ -54,13 +54,13 @@ const props = defineProps({
 
                 <Link
                     href="/about"
-                    class="px-3 py-2 text-black hover:text-black/70"
+                    class="relative h-[100px] flex items-center text-black hover:text-black/70"
                 >
                     O NAMA
                 </Link>
                 <Link
                     href="/contact"
-                    class="px-3 py-2 text-black hover:text-black/70"
+                    class="relative h-[100px] flex items-center text-black hover:text-black/70"
                 >
                     KONTAKT
                 </Link>

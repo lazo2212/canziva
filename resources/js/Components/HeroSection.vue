@@ -2,17 +2,16 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
 
+const props = defineProps({
+    addToCart: Function,
+});
+
 const products = ref([
     {
         title: "CBD",
-        // benefits : [{title: string, image: string}, ...]
-        benefits: [
-            "pomaže pri spavanju",
-            "djeluje protuupalno",
-            "ublažava bol",
-            "smanjuje stres i anksioznost",
-        ],
+        benefits: ["100% CBD ekstrakt", "THC ≤ 0,2%", "5000mg CBD smola"],
         style: {
+            hex: "#38a169",
             color: "text-green-600",
             bg: "bg-green-700",
             border: "border-green-700",
@@ -24,12 +23,12 @@ const products = ref([
     {
         title: "BALANCE",
         benefits: [
-            "ublažava bol",
-            "djeluje protuupalno",
-            "smanjuje stres i anksioznost",
-            "pomaže pri spavanju",
+            "50% CBD, 50% CBG ekstrakt",
+            "THC ≤ 0,2%",
+            "2500mg CBD, 2500mg CBG smola",
         ],
         style: {
+            hex: "#6b46c1",
             color: "text-purple-600",
             bg: "bg-purple-700",
             border: "border-purple-700",
@@ -40,13 +39,9 @@ const products = ref([
     },
     {
         title: "CBG",
-        benefits: [
-            "pomaže pri spavanju",
-            "smanjuje stres i anksioznost",
-            "djeluje protuupalno",
-            "ublažava bol",
-        ],
+        benefits: ["100% CBG ekstrakt", "THC ≤ 0,2%", "5000mg CBG smola"],
         style: {
+            hex: "#ed8936",
             color: "text-orange-600",
             bg: "bg-orange-700",
             border: "border-orange-700",
@@ -56,10 +51,6 @@ const products = ref([
         },
     },
 ]);
-
-const props = defineProps({
-    addToCart: Function,
-});
 
 const currentIndex = ref(0);
 const currentProduct = ref(products.value[currentIndex.value]);
@@ -139,7 +130,7 @@ onUnmounted(() => {
 
 <template>
     <div
-        class="w-full flex justify-center mt-24 p-20 product-card rounded-lg shadow-md"
+        class="w-full flex justify-center p-16 product-card rounded-lg shadow-md"
         :class="[currentProduct.style.background, currentProduct.style.shadow]"
     >
         <div
@@ -164,9 +155,21 @@ onUnmounted(() => {
                     v-for="(benefit, index) in currentProduct.benefits"
                     :key="index"
                 >
-                    <span
-                        class="bg-[url('/images/hexagon.svg')] bg-contain bg-no-repeat bg-center w-6 h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 inline-block me-3"
-                    ></span
+                    <span class="w-6 h-6 inline-block me-3">
+                        <svg
+                            class="w-full h-full"
+                            width="94"
+                            height="88"
+                            viewBox="0 0 94 88"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M44.5625 88V67.6562C41.625 71.0687 35.75 75.2687 24.1762 78.4187C24.1762 78.4187 27.1138 70.9375 35.3975 65.9062C27.76 67.1312 16.245 66.9563 0.5 61.75C0.5 61.75 15.0112 55.5813 31.52 57.2438C22.1787 53 10.4875 44.6 1.49875 27.2312C1.49875 27.2312 27.9362 32.6125 41.0962 49.2375C29.17 27.8 47.5 0.5 47.5 0.5C61.7763 24.4312 58.7212 40.3125 54.08 49.0625C67.2988 32.5687 93.5013 27.2312 93.5013 27.2312C84.5125 44.6 72.8213 53 63.48 57.2438C79.9888 55.5813 94.5 61.75 94.5 61.75C78.755 66.9563 67.24 67.1312 59.6025 65.9062C67.8863 70.9375 70.8238 78.4187 70.8238 78.4187C59.25 75.2687 53.375 71.0687 50.4375 67.6562V88H44.5625Z"
+                                :fill="currentProduct.style.hex"
+                                fill-opacity="0.6"
+                            />
+                        </svg> </span
                     >{{ benefit }}
                 </li>
             </ul>
