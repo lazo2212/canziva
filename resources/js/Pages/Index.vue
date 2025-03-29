@@ -57,14 +57,14 @@ defineOptions({ layout: Layout });
 
     <!-- TRAITS RAZDVAJAČ -->
     <div
-        class="parallax-section flex justify-between gap-14 py-12 mt-12 border-y-2"
+        class="parallax-section flex justify-between gap-14 py-12 px-8 mt-12 bg-green-50 shadow-md shadow-green rounded-lg"
     >
         <span
             class="relative flex justify-center items-center h-36 w-36"
             v-for="trait in traits"
         >
             <svg
-                class="absolute w-full h-full"
+                class="absolute w-full h-full trait-shadow"
                 width="94"
                 height="88"
                 viewBox="0 0 94 88"
@@ -74,10 +74,9 @@ defineOptions({ layout: Layout });
                 <path
                     d="M44.5625 88V67.6562C41.625 71.0687 35.75 75.2687 24.1762 78.4187C24.1762 78.4187 27.1138 70.9375 35.3975 65.9062C27.76 67.1312 16.245 66.9563 0.5 61.75C0.5 61.75 15.0112 55.5813 31.52 57.2438C22.1787 53 10.4875 44.6 1.49875 27.2312C1.49875 27.2312 27.9362 32.6125 41.0962 49.2375C29.17 27.8 47.5 0.5 47.5 0.5C61.7763 24.4312 58.7212 40.3125 54.08 49.0625C67.2988 32.5687 93.5013 27.2312 93.5013 27.2312C84.5125 44.6 72.8213 53 63.48 57.2438C79.9888 55.5813 94.5 61.75 94.5 61.75C78.755 66.9563 67.24 67.1312 59.6025 65.9062C67.8863 70.9375 70.8238 78.4187 70.8238 78.4187C59.25 75.2687 53.375 71.0687 50.4375 67.6562V88H44.5625Z"
                     fill="#16a34a"
-                    fill-opacity="0.6"
                 />
             </svg>
-            <span class="trait absolute font-bold text-white mt-4">{{
+            <span class="trait absolute font-bold text-white mt-6">{{
                 trait
             }}</span>
         </span>
@@ -87,7 +86,7 @@ defineOptions({ layout: Layout });
         class="parallax-section h-[60vh] flex items-center justify-center bg-green-50 shadow-md shadow-green rounded-lg my-16"
     >
         <div
-            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
+            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-tl-lg rounded-bl-lg"
         ></div>
         <div class="h-full w-1/2 relative p-10 ps-24">
             <h2 class="text-3xl font-bold mb-4">
@@ -157,7 +156,7 @@ defineOptions({ layout: Layout });
             >
         </div>
         <div
-            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
+            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-tr-lg rounded-br-lg"
         ></div>
     </section>
     <!-- CBG SEKCIJA -->
@@ -165,7 +164,7 @@ defineOptions({ layout: Layout });
         class="parallax-section h-[60vh] flex items-center justify-center bg-orange-50 shadow-md shadow-orange rounded-lg my-16"
     >
         <div
-            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
+            class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-tl-lg rounded-bl-lg"
         ></div>
         <div class="h-full w-1/2 relative p-10 ps-24">
             <h2 class="text-3xl font-bold mb-4">
@@ -202,6 +201,9 @@ defineOptions({ layout: Layout });
 </template>
 
 <style scoped>
+.trait-shadow {
+    filter: drop-shadow(0px 2px 2px rgb(0, 0, 0));
+}
 .trait {
     text-align: center;
     font-size: 1.2rem;
