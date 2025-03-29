@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import Layout from "@/Layouts/Layout.vue";
 import Nav from "@/Components/Nav.vue";
 import HeroSection from "@/Components/HeroSection.vue";
@@ -55,6 +55,7 @@ defineOptions({ layout: Layout });
 
     <HeroSection :add-to-cart="addToCart" />
 
+    <!-- TRAITS RAZDVAJAČ -->
     <div
         class="parallax-section flex justify-between gap-14 py-12 mt-12 border-y-2"
     >
@@ -81,118 +82,123 @@ defineOptions({ layout: Layout });
             }}</span>
         </span>
     </div>
-
-    <div
+    <!-- CBD SEKCIJA -->
+    <section
         class="parallax-section h-[60vh] flex items-center justify-center bg-green-50 shadow-md shadow-green rounded-lg my-16"
     >
         <div
             class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
         ></div>
         <div class="h-full w-1/2 relative p-10 ps-24">
-            <h2 class="text-3xl font-bold mb-6">
-                <span class="text-green-700">CBD</span> extrakt punog spektra
+            <h2 class="text-3xl font-bold mb-4">
+                <span class="text-green-700">CBD</span> pasta
             </h2>
             <p class="mt-2">
-                Sadrži 5000mg kanabidiola dobivenog iz cvjetova industrijske
-                konoplje postupkom ekstrakcije CO₂, kokosovo ulje i pčelinji
-                vosak.
+                CBD (kanabidiol) pasta je prirodni proizvod dobiven iz
+                industrijske konoplje koji nudi brojne potencijalne zdravstvene
+                prednosti. Bogata je kanabinoidima, terpenima i drugim korisnim
+                spojevima koji podržavaju opće blagostanje organizma.
             </p>
-            <ul class="list-disc ps-10 mt-2">
-                <li>99% CBD (5000mg)</li>
-                <li>THC ≤ 0,2%</li>
-                <li>Sadržaj: 5ml CBD smola</li>
+            <p class="font-bold mt-2">Prednosti:</p>
+            <ul class="list-disc ps-10 mb-6">
+                <li>Pomaže u smanjenju stresa i anksioznosti</li>
+                <li>Podržava zdrav san i opuštanje</li>
+                <li>Može ublažiti bolove i upale</li>
+                <li>Doprinosi općem zdravlju imunološkog sustava</li>
             </ul>
-            <p class="mt-2">
-                Ekstrakt je konzistencije slične smoli, iznimnih terapeutskih
-                svojstava, dobiven iz cvjetova industrijske konoplje kojeg radi
-                prevladavajućeg aktivnog sastojka kanabidiola nazivamo i CBD
-                pasta.
-            </p>
-
+            <a href="#">Preuzmi certifikat</a>
             <img
                 class="absolute bottom-5 left-5 opacity-50"
                 src="/images/canabinoid-cbd.svg"
                 alt="canabinoid"
-                width="400"
-                height="200"
+                width="350"
+                height="150"
             />
+            <Link
+                href="/product/cbd"
+                class="absolute bottom-10 right-10 text-green-700 text-lg font-bold hover:underline"
+                >Saznaj više</Link
+            >
         </div>
-    </div>
-
-    <div
+    </section>
+    <!-- BALANCE SEKCIJA -->
+    <section
         class="parallax-section h-[60vh] flex items-center justify-center bg-purple-50 shadow-md shadow-purple rounded-lg my-16"
     >
         <div class="h-full w-1/2 relative p-10 ps-24">
-            <h2 class="text-3xl font-bold mb-6">
-                <span class="text-purple-700">BALANCE</span> extrakt punog
-                spektra
+            <h2 class="text-3xl font-bold mb-4">
+                <span class="text-purple-700">BALANCE</span> pasta (CBD/CBG)
             </h2>
             <p class="mt-2">
-                Sadrži 5000mg kanabidiola dobivenog iz cvjetova industrijske
-                konoplje postupkom ekstrakcije CO₂, kokosovo ulje i pčelinji
-                vosak.
+                Balance pasta je jedinstveni proizvod koji sadrži uravnoteženu
+                kombinaciju CBD-a i CBG-a u omjeru 1:1. Ova sinergija dvaju
+                kanabinoida omogućuje učinkovitiji učinak zahvaljujući tzv.
+                "entourage efektu".
             </p>
-            <ul class="list-disc ps-10 mt-2">
-                <li>50% CBD (2500mg) i 50% CBG (2500mg)</li>
-                <li>THC ≤ 0,2%</li>
-                <li>Sadržaj: 2.5ml CBD i 2.5ml CBG smola</li>
+            <p class="font-bold mt-2">Prednosti:</p>
+            <ul class="list-disc ps-10 mb-6">
+                <li>Pruža uravnotežen učinak opuštanja i fokusa</li>
+                <li>Pomaže u smanjenju stresa i anksioznosti</li>
+                <li>Podržava zdravlje mišića i zglobova</li>
+                <li>Može poboljšati kvalitetu sna</li>
             </ul>
-            <p class="mt-2">
-                Ekstrakt je konzistencije slične smoli, iznimnih terapeutskih
-                svojstava, dobiven iz cvjetova industrijske konoplje kojeg radi
-                prevladavajućeg aktivnog sastojka kanabidiola nazivamo i BALANCE
-                pasta.
-            </p>
-
+            <a href="#">Preuzmi certifikat</a>
             <img
                 class="absolute bottom-5 left-5 opacity-50"
                 src="/images/canabinoid-balance.svg"
                 alt="canabinoid"
-                width="400"
-                height="200"
+                width="350"
+                height="150"
             />
+            <Link
+                href="/product/balance"
+                class="absolute bottom-10 right-10 text-purple-700 text-lg font-bold hover:underline"
+                >Saznaj više</Link
+            >
         </div>
         <div
             class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
         ></div>
-    </div>
-
-    <div
+    </section>
+    <!-- CBG SEKCIJA -->
+    <section
         class="parallax-section h-[60vh] flex items-center justify-center bg-orange-50 shadow-md shadow-orange rounded-lg my-16"
     >
         <div
             class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-lg"
         ></div>
         <div class="h-full w-1/2 relative p-10 ps-24">
-            <h2 class="text-3xl font-bold mb-6">
-                <span class="text-orange-700">CBG</span> extrakt punog spektra
+            <h2 class="text-3xl font-bold mb-4">
+                <span class="text-orange-700">CBG</span> pasta
             </h2>
             <p class="mt-2">
-                Sadrži 5000mg kanabidiola dobivenog iz cvjetova industrijske
-                konoplje postupkom ekstrakcije CO₂, kokosovo ulje i pčelinji
-                vosak.
+                CBG (kanabigerol) pasta poznata je kao "majka svih kanabinoida"
+                jer se iz nje tijekom sazrijevanja biljke stvaraju ostali
+                kanabinoidi. Ova pasta pruža specifične koristi koje se
+                razlikuju od CBD-a.
             </p>
-            <ul class="list-disc ps-10 mt-2">
-                <li>99% CBG (5000mg)</li>
-                <li>THC ≤ 0,2%</li>
-                <li>Sadržaj: 5ml CBG smola</li>
+            <p class="font-bold mt-2">Prednosti:</p>
+            <ul class="list-disc ps-10 mb-6">
+                <li>Potiče fokus i mentalnu jasnoću</li>
+                <li>Može smanjiti upale i ublažiti bol</li>
+                <li>Podržava zdravlje probavnog sustava</li>
+                <li>Pomaže u regulaciji raspoloženja</li>
             </ul>
-            <p class="mt-2">
-                Ekstrakt je konzistencije slične smoli, iznimnih terapeutskih
-                svojstava, dobiven iz cvjetova industrijske konoplje kojeg radi
-                prevladavajućeg aktivnog sastojka kanabidiola nazivamo i CBG
-                pasta.
-            </p>
-
+            <a href="#">Preuzmi certifikat</a>
             <img
                 class="absolute bottom-5 left-5 opacity-50"
                 src="/images/canabinoid-cbg.svg"
                 alt="canabinoid"
-                width="400"
-                height="200"
+                width="350"
+                height="150"
             />
+            <Link
+                href="/product/cbg"
+                class="absolute bottom-10 right-10 text-orange-700 text-lg font-bold hover:underline"
+                >Saznaj više</Link
+            >
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>

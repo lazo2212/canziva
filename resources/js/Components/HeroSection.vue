@@ -129,8 +129,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div
-        class="w-full flex justify-center p-16 product-card rounded-lg shadow-md"
+    <!-- HERO SECTION -->
+    <section
+        class="w-full flex justify-center py-10 px-24 product-card rounded-lg shadow-md"
         :class="[currentProduct.style.background, currentProduct.style.shadow]"
     >
         <div
@@ -186,8 +187,8 @@ onUnmounted(() => {
                 class="product-image w-full h-[40vh] xl:h-[55vh] rounded-lg bg-[url('/images/cbd-pasta.svg')] bg-contain bg-no-repeat bg-center filter"
             ></div>
         </div>
-    </div>
-
+    </section>
+    <!-- BUTTONS -->
     <div class="flex align-center justify-center p-10">
         <div class="button-container px-6" v-for="(product, index) in products">
             <button

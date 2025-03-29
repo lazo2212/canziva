@@ -15,24 +15,23 @@ const props = defineProps({
 <template>
     <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
         <nav class="flex justify-between items-center max-w-screen-2xl mx-auto">
-            <Link href="/" class="py-2"
+            <!-- LOGO -->
+            <Link href="/"
                 ><img
                     src="/images/logo.svg"
                     alt="CANZIVA logo"
-                    class="h-[100px]"
+                    class="h-[90px]"
             /></Link>
 
-            <div class="flex gap-12">
+            <div class="flex">
+                <!-- SUBMENU -->
                 <Link
                     href="/"
-                    class="relative h-[100px] flex items-center text-black hover:text-black/70 group"
+                    class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 group border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
                     @mouseenter="showSubmenu = true"
                     @mouseleave="showSubmenu = false"
                 >
-                    <div
-                        href="#"
-                        class="group flex items-center gap-1 cursor-pointer"
-                    >
+                    <div class="flex items-center gap-1 cursor-pointer">
                         PROIZVODI
                         <svg
                             width="12"
@@ -51,25 +50,27 @@ const props = defineProps({
 
                     <Submenu :visible="showSubmenu" />
                 </Link>
-
+                <!-- O NAMA -->
                 <Link
                     href="/about"
-                    class="relative h-[100px] flex items-center text-black hover:text-black/70"
+                    class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
                 >
                     O NAMA
                 </Link>
+                <!-- KONTAKT -->
                 <Link
                     href="/contact"
-                    class="relative h-[100px] flex items-center text-black hover:text-black/70"
+                    class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
                 >
                     KONTAKT
                 </Link>
             </div>
 
             <div class="flex gap-2">
+                <!-- KOŠARICA -->
                 <Link
                     href="#"
-                    class="relative px-3 py-2 me-3 transition hover:fill-black/60"
+                    class="relative h-[100px] flex items-center px-10 transition hover:fill-black/60"
                     @mouseenter="showCartMenu = true"
                     @mouseleave="showCartMenu = false"
                 >
@@ -84,7 +85,7 @@ const props = defineProps({
                         >{{ cartItems }}</span
                     >
                     <div
-                        class="absolute p-4 top-[60px] right-0 w-48 bg-white shadow-md transition-all duration-300 ease-in-out z-40 cursor-default select-none flex flex-col"
+                        class="absolute p-4 top-[100px] right-0 w-48 bg-white shadow-md transition-all duration-300 ease-in-out z-40 cursor-default select-none flex flex-col"
                         :class="
                             showCartMenu
                                 ? 'opacity-100 visible'
@@ -109,9 +110,10 @@ const props = defineProps({
                         </div>
                     </div>
                 </Link>
+                <!-- KORISNIK -->
                 <Link
                     href="#"
-                    class="relative px-3 py-2 transition hover:fill-black/60"
+                    class="relative h-[100px] flex items-center px-10 transition hover:fill-black/60"
                     @mouseenter="showUserMenu = true"
                     @mouseleave="showUserMenu = false"
                     ><svg class="svg-icon h-8" viewBox="0 0 20 20">
@@ -121,7 +123,7 @@ const props = defineProps({
                     </svg>
 
                     <div
-                        class="absolute p-4 top-[60px] right-0 w-48 bg-white shadow-md transition-all duration-300 ease-in-out z-40 cursor-default select-none flex flex-col"
+                        class="absolute p-4 top-[100px] right-0 w-48 bg-white shadow-md transition-all duration-300 ease-in-out z-40 cursor-default select-none flex flex-col"
                         :class="
                             showUserMenu
                                 ? 'opacity-100 visible'
@@ -129,16 +131,43 @@ const props = defineProps({
                         "
                     >
                         <Link
+                            v-show="!$page.props.auth.user"
                             href="/login"
                             class="px-3 py-2 text-black hover:text-black/70"
                         >
                             Prijava
                         </Link>
                         <Link
-                            href="/register"
+                            v-show="!$page.props.auth.user"
+                            :href="route('register')"
                             class="px-3 py-2 text-black hover:text-black/70"
                         >
                             Registriracija
+                        </Link>
+                        <p
+                            class="font-bold text-center mb-3"
+                            v-if="$page.props.auth.user"
+                        >
+                            {{ $page.props.auth.user.name }}
+                        </p>
+                        <span v-if="$page.props.auth.user" class="text-center">
+                            <Link
+                                v-if="$page.props.auth.user.role === 'admin'"
+                                :href="route('dashboard')"
+                                :active="route().current('dashboard')"
+                                class="px-3 py-2 text-black hover:text-black/70"
+                            >
+                                Dashboard
+                            </Link>
+                        </span>
+                        <Link
+                            v-show="$page.props.auth.user"
+                            :href="route('logout')"
+                            method="post"
+                            as="button"
+                            class="px-3 py-2 text-black hover:text-black/70"
+                        >
+                            Odjava
                         </Link>
                     </div>
                 </Link>
