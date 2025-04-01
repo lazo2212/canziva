@@ -13,8 +13,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                righteous: ["Righteous", ...defaultTheme.fontFamily.sans],
+                popins: ["Popins", ...defaultTheme.fontFamily.sans],
+                monserat: ["Monserat", ...defaultTheme.fontFamily.sans],
             },
         },
     },

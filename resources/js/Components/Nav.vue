@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 import { Link } from "@inertiajs/vue3";
 import Submenu from "./Submenu.vue";
 
@@ -23,7 +23,7 @@ const props = defineProps({
                     class="h-[90px]"
             /></Link>
 
-            <div class="flex">
+            <div class="lg:flex hidden">
                 <!-- SUBMENU -->
                 <div
                     class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 group border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out cursor-pointer"
@@ -110,7 +110,7 @@ const props = defineProps({
                 </div>
                 <!-- KORISNIK -->
                 <div
-                    class="relative h-[100px] flex items-center px-10 transition hover:fill-black/60 cursor-pointer"
+                    class="relative h-[100px] flex items-center px-4 xl:px-10 transition hover:fill-black/60 cursor-pointer"
                     @mouseenter="showUserMenu = true"
                     @mouseleave="showUserMenu = false"
                 >

@@ -7,7 +7,7 @@ import Layout from "@/Layouts/Layout.vue";
     <Layout>
         <Head title="Balance" />
 
-        <div class="h-screen w-full">
+        <div class="w-full">
             <h1 class="text-4xl text-purple-600">Balance</h1>
         </div>
     </Layout>

@@ -9,7 +9,12 @@ const props = defineProps({
 const products = ref([
     {
         title: "CBD",
-        benefits: ["100% CBD ekstrakt", "THC ≤ 0,2%", "5000mg CBD smola"],
+        benefits: [
+            "100% CBD ekstrakt",
+            "THC ≤ 0,2%",
+            "5000mg CBD smola",
+            "Full Spectrum",
+        ],
         style: {
             hex: "#38a169",
             color: "text-green-600",
@@ -26,6 +31,7 @@ const products = ref([
             "50% CBD, 50% CBG ekstrakt",
             "THC ≤ 0,2%",
             "2500mg CBD, 2500mg CBG smola",
+            "Full Spectrum",
         ],
         style: {
             hex: "#6b46c1",
@@ -39,7 +45,12 @@ const products = ref([
     },
     {
         title: "CBG",
-        benefits: ["100% CBG ekstrakt", "THC ≤ 0,2%", "5000mg CBG smola"],
+        benefits: [
+            "100% CBG ekstrakt",
+            "THC ≤ 0,2%",
+            "5000mg CBG smola",
+            "Full Spectrum",
+        ],
         style: {
             hex: "#ed8936",
             color: "text-orange-600",
@@ -140,7 +151,7 @@ onUnmounted(() => {
             @mouseleave="startAutoChange"
         >
             <h2
-                class="text-4xl xl:text-5xl 2xl:text-6xl select-none font-righteous uppercase"
+                class="text-5xl xl:text-6xl select-none font-monserat uppercase"
             >
                 <span
                     class="font-bold drop-shadow-[0_2px_2px_rgb(0,0,0)]"
@@ -148,7 +159,7 @@ onUnmounted(() => {
                 >
                     {{ currentProduct.title }}
                 </span>
-                ekstrakt punog spektra
+                pasta punog spektra
             </h2>
             <ul class="p-10 select-none">
                 <li
@@ -176,7 +187,7 @@ onUnmounted(() => {
             </ul>
             <button
                 @click="addToCart"
-                class="px-8 py-4 xl:px-9 xl:py-5 2xl:px-10 2xl:py-6 text-md xl:text-2xl 2xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-righteous"
+                class="px-8 py-4 xl:px-10 xl:py-6 text-2xl xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-monserat text-shadow"
                 :class="currentProduct.style.linearGradient"
             >
                 KUPI {{ currentProduct.title }}
@@ -198,7 +209,7 @@ onUnmounted(() => {
                     startAutoChange();
                 "
                 :class="[
-                    'px-6 py-4 text-md xl:text-lg 2xl:text-2xl font-bold rounded-md transition-all duration-150 select-none border-4 border-y-0 font-righteous',
+                    'px-6 py-4 text-lg xl:text-2xl font-bold rounded-md transition-all duration-150 select-none border-4 border-y-0 font-monserat',
                     index === currentIndex
                         ? `${product.style.border} ${product.style.color}`
                         : 'border-transparent text-gray-600',
@@ -213,5 +224,10 @@ onUnmounted(() => {
 <style scoped>
 .button-container + .button-container {
     border-left: 2px solid #e2e8f0;
+}
+.text-shadow {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3),
+        -1px -1px 4px rgba(0, 0, 0, 0.3), 1px -1px 4px rgba(0, 0, 0, 0.3),
+        -1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 </style>

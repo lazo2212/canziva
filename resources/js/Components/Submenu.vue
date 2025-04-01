@@ -1,6 +1,5 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
-import { defineProps } from "vue";
 
 const props = defineProps({
     visible: Boolean,
@@ -9,14 +8,14 @@ const props = defineProps({
 
 <template>
     <div
-        class="fixed left-0 top-[106px] w-full flex justify-center gap-5 p-8 transition-all duration-300 ease-in-out shadow bg-white z-40 cursor-default select-none"
+        class="fixed left-0 top-[100px] w-full flex justify-center gap-5 p-8 transition-all duration-300 ease-in-out shadow bg-white z-40 cursor-default select-none"
         :class="visible ? 'opacity-100 visible' : 'opacity-0 invisible'"
     >
         <Link
             href="/product/cbd"
             class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-green-800 to-green-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 scale-95 hover:scale-100"
         >
-            <span class="absolute top-4 left-4 font-bold font-righteous"
+            <span class="absolute top-4 left-4 font-bold font-monserat"
                 >CBD</span
             >
             <img
@@ -29,7 +28,7 @@ const props = defineProps({
             href="/product/balance"
             class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-purple-800 to-purple-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 scale-95 hover:scale-100"
         >
-            <span class="absolute top-4 left-4 font-bold font-righteous"
+            <span class="absolute top-4 left-4 font-bold font-monserat"
                 >BALANCE</span
             >
             <img
@@ -42,7 +41,7 @@ const props = defineProps({
             href="/product/cbg"
             class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-orange-800 to-orange-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 scale-95 hover:scale-100"
         >
-            <span class="absolute top-4 left-4 font-bold font-righteous"
+            <span class="absolute top-4 left-4 font-bold font-monserat"
                 >CBG</span
             >
             <img
