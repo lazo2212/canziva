@@ -26,7 +26,7 @@ const props = defineProps({
             <div class="lg:flex hidden">
                 <!-- SUBMENU -->
                 <div
-                    class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 group border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out cursor-pointer"
+                    class="relative h-[100px] flex items-center px-10 text-black font-monserat hover:text-black/70 group border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out cursor-pointer"
                     @mouseenter="showSubmenu = true"
                     @mouseleave="showSubmenu = false"
                 >
@@ -52,14 +52,14 @@ const props = defineProps({
                 <!-- O NAMA -->
                 <Link
                     href="/about"
-                    class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
+                    class="relative h-[100px] flex items-center px-10 text-black font-monserat hover:text-black/70 border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
                 >
                     O NAMA
                 </Link>
                 <!-- KONTAKT -->
                 <Link
                     href="/contact"
-                    class="relative h-[100px] flex items-center px-10 text-black hover:text-black/70 border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
+                    class="relative h-[100px] flex items-center px-10 text-black font-monserat hover:text-black/70 border-b-2 border-transparent hover:border-black/70 transition-all duration-300 ease-in-out"
                 >
                     KONTAKT
                 </Link>

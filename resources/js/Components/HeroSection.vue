@@ -142,7 +142,7 @@ onUnmounted(() => {
 <template>
     <!-- HERO SECTION -->
     <section
-        class="w-full flex justify-center py-10 px-24 product-card rounded-lg shadow-md"
+        class="w-full flex justify-center py-10 px-24 product-card rounded-lg shadow-md shadow-gray-400"
         :class="[currentProduct.style.background, currentProduct.style.shadow]"
     >
         <div
