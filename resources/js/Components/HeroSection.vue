@@ -13,7 +13,7 @@ const products = ref([
             "100% CBD ekstrakt",
             "THC ≤ 0,2%",
             "5000mg CBD smola",
-            "Full Spectrum",
+            "puni spektar kanabinoida",
         ],
         style: {
             hex: "#38a169",
@@ -31,7 +31,7 @@ const products = ref([
             "50% CBD, 50% CBG ekstrakt",
             "THC ≤ 0,2%",
             "2500mg CBD, 2500mg CBG smola",
-            "Full Spectrum",
+            "puni spektar kanabinoida",
         ],
         style: {
             hex: "#6b46c1",
@@ -49,7 +49,7 @@ const products = ref([
             "100% CBG ekstrakt",
             "THC ≤ 0,2%",
             "5000mg CBG smola",
-            "Full Spectrum",
+            "puni spektar kanabinoida",
         ],
         style: {
             hex: "#ed8936",
@@ -161,13 +161,13 @@ onUnmounted(() => {
                 </span>
                 pasta punog spektra
             </h2>
-            <ul class="p-10 select-none">
+            <ul class="p-8 select-none">
                 <li
-                    class="mb-4 flex items-center"
+                    class="mb-4 flex items-center text-lg"
                     v-for="(benefit, index) in currentProduct.benefits"
                     :key="index"
                 >
-                    <span class="w-6 h-6 inline-block me-3">
+                    <span class="w-8 h-8 inline-block me-3">
                         <svg
                             class="w-full h-full"
                             width="94"

@@ -1,6 +1,34 @@
 <script setup>
 import { Head } from "@inertiajs/vue3";
 import Layout from "@/Layouts/Layout.vue";
+import { onMounted } from "vue";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+    gsap.utils.toArray(".parallax-section").forEach((section, index) => {
+        gsap.fromTo(
+            section,
+            { y: 100, opacity: 0, scale: 1.4 },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 90%",
+                    end: "top",
+                    scrub: true,
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    });
+});
 </script>
 
 <template>
@@ -18,53 +46,56 @@ import Layout from "@/Layouts/Layout.vue";
             <meta name="author" content="Benjamin Lazić" />
         </Head>
 
-        <div class="w-full">
+        <div class="w-full mb-10">
             <section
-                class="mb-12 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-8"
+                class="mb-10 shadow-md shadow-gray-400 bg-green-50 rounded-lg px-8 py-12 leading-6 parallax-section"
             >
                 <div class="flex justify-center items-center">
                     <div class="w-1/2">
                         <h1 class="text-4xl font-bold font-monserat mb-2">
-                            CBD pasta - 5ml
+                            CBD full spectrum pasta - 5ml
                         </h1>
                         <p
-                            class="text-3xl text-gray-700 font-semibold font-monserat mb-4"
+                            class="text-3xl text-gray-500 font-semibold font-monserat mb-4"
                         >
-                            100€
+                            Cijena: 100€
                         </p>
                         <p class="mb-1">
-                            🌿 Pasta od Cannabis Sativa L konoplje
+                            <img
+                                src="/images/cannabis.svg"
+                                alt="cannabis image"
+                                class="w-5 h-5 inline-block"
+                            />
+                            Pasta od Cannabis Sativa L konoplje
                         </p>
 
                         <p class="mb-1">
-                            ✨ Zlatne boje, bez klorofila i oporog okusa -
-                            jednostavna za primjenu.
+                            ✨ Čista, zlatna smola - bez oporog okusa i
+                            klorofila
                         </p>
                         <p class="mb-4">
-                            🔬 Visokokvalitetna formula s visokom koncentracijom
-                            CBD-a i punim spektrom kanabinoida te bioaktivnih
-                            spojeva za maksimalni “efekt sinergije”.
+                            🔬 Visoka koncentracija CBG-a + puni spektar
+                            kanabinoida i terpena
                         </p>
                         <ul class="mb-4">
                             <li class="ms-10 font-semibold">
-                                ✔ Co2 ekstrakcija
+                                ✔ alkoholna ekstrakcija
                             </li>
                             <li class="ms-10 font-semibold">
                                 ✔ puni spektar kanabinoida, flavonoida i terpena
                             </li>
                             <li class="ms-10 font-semibold">
-                                ✔ laboratorijski certificirano
+                                ✔ laboratorijski ispitano
                             </li>
                             <li class="ms-10 font-semibold">
                                 ✔ organski uzgoj
                             </li>
                             <li class="ms-10 font-semibold">
-                                ✔ prirodni sastojci
+                                ✔ bez dodanih kemikalija
                             </li>
                             <li class="ms-10 font-semibold">
-                                ✔ veganski proizvod
+                                ✔ veganski i bez glutena
                             </li>
-                            <li class="ms-10 font-semibold">✔ bez glutena</li>
                         </ul>
                         <p class="text-gray-500">
                             Dodatak prehrani - nije nadomjestak uravnoteženoj
@@ -83,9 +114,9 @@ import Layout from "@/Layouts/Layout.vue";
             </section>
 
             <article
-                class="mb-4 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-8"
+                class="mb-8 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
             >
-                <h2 class="font-bold text-xl mb-1">
+                <h2 class="font-bold text-xl mb-2">
                     Što je CBD i za što se koristi?
                 </h2>
                 <p>
@@ -110,13 +141,13 @@ import Layout from "@/Layouts/Layout.vue";
             </article>
 
             <article
-                class="mb-4 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-8"
+                class="mb-8 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
             >
-                <h2 class="font-bold text-xl mb-1">CBD pasta ili smola</h2>
+                <h2 class="font-bold text-xl mb-2">CBD pasta ili smola</h2>
                 <p>
                     CBD smola, poznata i kao CBD pasta, sadrži visoku
                     koncentraciju kanabidiola. Za razliku od CBD ulja, koje se
-                    obično miješa s nosačima poput MCT ulja, psta je gušće
+                    obično miješa s nosačima poput MCT ulja, pasta je gušće
                     konzistencije i može sadržavati i do 80% CBD-a. S obzirom na
                     visoku koncentraciju CBD-a, pasta je pogodna za osobe kojima
                     standardna ulja nisu dovoljna za postizanje željenih
@@ -140,9 +171,9 @@ import Layout from "@/Layouts/Layout.vue";
             </article>
 
             <article
-                class="mb-4 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-8"
+                class="mb-8 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
             >
-                <h2 class="font-bold text-xl mb-1">
+                <h2 class="font-bold text-xl mb-2">
                     Pravilno doziranje CBD paste
                 </h2>
                 <p>
@@ -185,9 +216,9 @@ import Layout from "@/Layouts/Layout.vue";
             </article>
 
             <article
-                class="shadow-md shadow-gray-400 bg-green-50 rounded-lg p-8"
+                class="shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
             >
-                <h2 class="font-bold text-xl mb-1">
+                <h2 class="font-bold text-xl mb-2">
                     Moguće nuspojave prilikom korištenja CBD smole
                 </h2>
                 <p>

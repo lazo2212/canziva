@@ -27,16 +27,17 @@ onMounted(() => {
     gsap.utils.toArray(".parallax-section").forEach((section, index) => {
         gsap.fromTo(
             section,
-            { y: 150, opacity: 0 },
+            { y: 100, opacity: 0, scale: 1.4 },
             {
                 y: 0,
                 opacity: 1,
+                scale: 1,
                 duration: 1.5,
                 ease: "power4.out",
                 scrollTrigger: {
                     trigger: section,
-                    start: "top 100%",
-                    end: "bottom top",
+                    start: "top 90%",
+                    end: "top",
                     scrub: true,
                     toggleActions: "play none none none",
                 },
@@ -56,7 +57,7 @@ onMounted(() => {
 
         <!-- TRAITS RAZDVAJAČ -->
         <div
-            class="parallax-section flex justify-between gap-14 py-12 px-8 mt-12 bg-green-50 shadow-md shadow-gray-400 rounded-lg"
+            class="parallax-section flex justify-between gap-14 py-12 px-8 mt-28 mb-40 bg-green-50 shadow-md shadow-gray-400 rounded-lg"
         >
             <span
                 class="relative flex justify-center items-center h-36 w-36"
@@ -105,7 +106,16 @@ onMounted(() => {
                     <li>Može ublažiti bolove i upale</li>
                     <li>Doprinosi općem zdravlju imunološkog sustava</li>
                 </ul>
-                <a href="#">Preuzmi certifikat</a>
+                <a
+                    href="#"
+                    class="flex items-center font-semibold hover:text-green-600 transition-all duration-150"
+                    >Preuzmi certifikat
+                    <img
+                        src="/images/certificate.svg"
+                        alt="certificate"
+                        class="w-8 h-8 ms-2"
+                    />
+                </a>
                 <img
                     class="absolute bottom-5 left-5 opacity-50"
                     src="/images/canabinoid-cbd.svg"
@@ -115,9 +125,25 @@ onMounted(() => {
                 />
                 <Link
                     href="/product/cbd"
-                    class="absolute bottom-10 right-10 text-green-700 text-lg font-bold hover:underline"
-                    >Saznaj više</Link
-                >
+                    class="absolute bottom-10 right-10 text-green-700 text-lg font-bold flex items-center hover:underline"
+                    >Saznaj više
+                    <svg
+                        fill="#15803d"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 55.752 55.752"
+                        xml:space="preserve"
+                        class="w-6 h-6"
+                    >
+                        <g>
+                            <path
+                                d="M43.006,23.916c-0.28-0.282-0.59-0.52-0.912-0.727L20.485,1.581c-2.109-2.107-5.527-2.108-7.637,0.001 c-2.109,2.108-2.109,5.527,0,7.637l18.611,18.609L12.754,46.535c-2.11,2.107-2.11,5.527,0,7.637c1.055,1.053,2.436,1.58,3.817,1.58 s2.765-0.527,3.817-1.582l21.706-21.703c0.322-0.207,0.631-0.444,0.912-0.727c1.08-1.08,1.598-2.498,1.574-3.912 C44.605,26.413,44.086,24.993,43.006,23.916z"
+                            ></path>
+                        </g>
+                    </svg>
+                </Link>
             </div>
         </section>
         <!-- BALANCE SEKCIJA -->
@@ -141,7 +167,16 @@ onMounted(() => {
                     <li>Podržava zdravlje mišića i zglobova</li>
                     <li>Može poboljšati kvalitetu sna</li>
                 </ul>
-                <a href="#">Preuzmi certifikat</a>
+                <a
+                    href="#"
+                    class="flex items-center font-semibold hover:text-purple-600 transition-all duration-150"
+                    >Preuzmi certifikat
+                    <img
+                        src="/images/certificate.svg"
+                        alt="certificate"
+                        class="w-8 h-8 ms-2"
+                    />
+                </a>
                 <img
                     class="absolute bottom-5 left-5 opacity-50"
                     src="/images/canabinoid-balance.svg"
@@ -151,9 +186,25 @@ onMounted(() => {
                 />
                 <Link
                     href="/product/balance"
-                    class="absolute bottom-10 right-10 text-purple-700 text-lg font-bold hover:underline"
-                    >Saznaj više</Link
-                >
+                    class="absolute bottom-10 right-10 text-purple-700 text-lg font-bold flex items-center hover:underline"
+                    >Saznaj više
+                    <svg
+                        fill="#7e22ce"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 55.752 55.752"
+                        xml:space="preserve"
+                        class="w-6 h-6"
+                    >
+                        <g>
+                            <path
+                                d="M43.006,23.916c-0.28-0.282-0.59-0.52-0.912-0.727L20.485,1.581c-2.109-2.107-5.527-2.108-7.637,0.001 c-2.109,2.108-2.109,5.527,0,7.637l18.611,18.609L12.754,46.535c-2.11,2.107-2.11,5.527,0,7.637c1.055,1.053,2.436,1.58,3.817,1.58 s2.765-0.527,3.817-1.582l21.706-21.703c0.322-0.207,0.631-0.444,0.912-0.727c1.08-1.08,1.598-2.498,1.574-3.912 C44.605,26.413,44.086,24.993,43.006,23.916z"
+                            ></path>
+                        </g>
+                    </svg>
+                </Link>
             </div>
             <div
                 class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-tr-lg rounded-br-lg"
@@ -183,7 +234,16 @@ onMounted(() => {
                     <li>Podržava zdravlje probavnog sustava</li>
                     <li>Pomaže u regulaciji raspoloženja</li>
                 </ul>
-                <a href="#">Preuzmi certifikat</a>
+                <a
+                    href="#"
+                    class="flex items-center font-semibold hover:text-orange-600 transition-all duration-150"
+                    >Preuzmi certifikat
+                    <img
+                        src="/images/certificate.svg"
+                        alt="certificate"
+                        class="w-8 h-8 ms-2"
+                    />
+                </a>
                 <img
                     class="absolute bottom-5 left-5 opacity-50"
                     src="/images/canabinoid-cbg.svg"
@@ -193,9 +253,25 @@ onMounted(() => {
                 />
                 <Link
                     href="/product/cbg"
-                    class="absolute bottom-10 right-10 text-orange-700 text-lg font-bold hover:underline"
-                    >Saznaj više</Link
-                >
+                    class="absolute bottom-10 right-10 text-orange-700 text-lg font-bold flex items-center hover:underline"
+                    >Saznaj više
+                    <svg
+                        fill="#c2410c"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 55.752 55.752"
+                        xml:space="preserve"
+                        class="w-6 h-6"
+                    >
+                        <g>
+                            <path
+                                d="M43.006,23.916c-0.28-0.282-0.59-0.52-0.912-0.727L20.485,1.581c-2.109-2.107-5.527-2.108-7.637,0.001 c-2.109,2.108-2.109,5.527,0,7.637l18.611,18.609L12.754,46.535c-2.11,2.107-2.11,5.527,0,7.637c1.055,1.053,2.436,1.58,3.817,1.58 s2.765-0.527,3.817-1.582l21.706-21.703c0.322-0.207,0.631-0.444,0.912-0.727c1.08-1.08,1.598-2.498,1.574-3.912 C44.605,26.413,44.086,24.993,43.006,23.916z"
+                            ></path>
+                        </g>
+                    </svg>
+                </Link>
             </div>
         </section>
     </Layout>
