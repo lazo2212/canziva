@@ -37,7 +37,7 @@ onMounted(() => {
             <title>CBG full spectrum pasta</title>
             <meta
                 name="description"
-                content="Naša CBG pasta je čisti extrakt kanabidiola (CBG) sa punim spektrom ostalih kanabinoida i terpena sa manje od 2% THC-a. Saznaj više o našoj CBG pasti i njenim prednostima."
+                content="Naša CBG pasta je čisti extrakt kanabigerola (CBG) sa punim spektrom ostalih kanabinoida i terpena sa manje od 2% THC-a. Saznaj više o našoj CBG pasti i njenim prednostima."
             />
             <meta
                 name="keywords"
@@ -52,7 +52,7 @@ onMounted(() => {
             >
                 <div class="flex justify-center items-center">
                     <div class="w-1/2">
-                        <h1 class="text-4xl font-bold font-monserat mb-2">
+                        <h1 class="text-3xl font-bold font-monserat mb-2">
                             CBG full spectrum pasta – 5ml
                         </h1>
                         <p
@@ -113,7 +113,7 @@ onMounted(() => {
                 </div>
             </section>
 
-            <!-- <ul>
+            <ul>
                 <li>
                     <a
                         class="text-blue-500"
@@ -135,7 +135,7 @@ onMounted(() => {
                         >Cbg - majka svih kanabinoida</a
                     >
                 </li>
-            </ul> -->
+            </ul>
 
             <article
                 class="mb-4 shadow-md shadow-gray-400 bg-orange-50 rounded-lg p-8 parallax-section"

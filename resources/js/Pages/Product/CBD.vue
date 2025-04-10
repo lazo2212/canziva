@@ -52,7 +52,7 @@ onMounted(() => {
             >
                 <div class="flex justify-center items-center">
                     <div class="w-1/2">
-                        <h1 class="text-4xl font-bold font-monserat mb-2">
+                        <h1 class="text-3xl font-bold font-monserat mb-2">
                             CBD full spectrum pasta - 5ml
                         </h1>
                         <p
