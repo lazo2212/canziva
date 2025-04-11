@@ -1,15 +1,14 @@
 <script setup>
 import { ref } from "vue";
 import { Link } from "@inertiajs/vue3";
+import { useCartStore } from "@/cart";
 import Submenu from "./Submenu.vue";
 
 const showSubmenu = ref(false);
 const showCart = ref(false);
 const showUserMenu = ref(false);
 
-const props = defineProps({
-    cartItems: Number,
-});
+const cart = useCartStore();
 </script>
 
 <template>
@@ -77,9 +76,9 @@ const props = defineProps({
                         class="h-9 w-9 opacity-100 hover:opacity-60"
                     />
                     <span
-                        v-if="cartItems > 0"
+                        v-if="cart.totalQuantity > 0"
                         class="absolute top-[30%] right-[30%] w-4 h-4 bg-red-500 text-white text-xs font-bold flex items-center justify-center rounded-full"
-                        >{{ cartItems }}</span
+                        >{{ cart.totalQuantity }}</span
                     >
                 </div>
                 <!-- KORISNIK -->
@@ -178,29 +177,25 @@ const props = defineProps({
                     </button>
                     <h2 class="text-2xl font-bold mb-5">Košarica</h2>
                     <div
-                        v-if="cartItems == 0"
+                        v-if="cart.totalQuantity == 0"
                         class="flex flex-col items-center justify-center h-full"
                     >
                         <p class="text-lg text-center">Košarica je prazna</p>
                     </div>
                     <!-- SADRŽAJ KOŠARICE -->
                     <div v-else>
-                        <p class="text-lg text-center">
-                            Ovdje će biti sadržaj košarice
-                        </p>
                         <div class="flex flex-col gap-2 mt-5">
-                            <div class="flex justify-between items-center">
-                                <p class="text-lg">Proizvod 1</p>
-                                <p class="text-lg">100,00 kn</p>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <p class="text-lg">Proizvod 2</p>
-                                <p class="text-lg">200,00 kn</p>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <p class="text-lg">Proizvod 3</p>
-                                <p class="text-lg">300,00 kn</p>
-                            </div>
+                            <ul>
+                                <li
+                                    v-for="(item, index) in cart.cartItems"
+                                    :key="item.id"
+                                >
+                                    {{ item.name }}
+                                    <button @click="cart.removeFromCart(index)">
+                                        Ukloni
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                         <a
                             href="#"

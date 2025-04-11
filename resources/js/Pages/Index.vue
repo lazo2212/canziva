@@ -1,27 +1,20 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
 import Layout from "@/Layouts/Layout.vue";
-import Nav from "@/Components/Nav.vue";
 import HeroSection from "@/Components/HeroSection.vue";
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const traits = [
-    "VANJSKI UZGOJ",
-    "ORGANSKI UZGOJ",
     "PREMIUM KVALITETA",
-    "VISOK SADRŽAJ KANABINOIDA",
+    "ORGANSKI UZGOJ",
     "THC ≤ 0,2%",
+    "VANJSKI UZGOJ",
+    "VISOK SADRŽAJ KANABINOIDA",
 ];
-
-const cartItems = ref(0);
-
-const addToCart = () => {
-    cartItems.value++;
-};
 
 onMounted(() => {
     gsap.utils.toArray(".parallax-section").forEach((section, index) => {
@@ -47,20 +40,20 @@ onMounted(() => {
 });
 </script>
 
+<!-- složit da pri manjim rezolucijama kartice dolaze scale 0.8 na 1-->
+
 <template>
     <Layout>
         <Head title="Home" />
-
-        <Nav :cart-items="cartItems" />
 
         <HeroSection :add-to-cart="addToCart" />
 
         <!-- TRAITS RAZDVAJAČ -->
         <div
-            class="parallax-section flex justify-between gap-14 py-12 px-8 mt-20 mb-40 bg-green-50 shadow-md shadow-black/60 rounded-lg"
+            class="parallax-section flex justify-between py-12 m-10 rounded-lg"
         >
             <span
-                class="relative flex justify-center items-center h-36 w-36"
+                class="relative flex justify-center items-center h-40 w-40"
                 v-for="trait in traits"
             >
                 <svg
@@ -125,23 +118,21 @@ onMounted(() => {
                 />
                 <Link
                     href="/product/cbd"
-                    class="absolute bottom-10 right-10 text-green-700 text-lg font-bold flex items-center hover:underline"
+                    class="absolute bottom-10 right-10 text-green-700 text-lg font-bold flex items-center border-b-4 border-transparent hover:border-green-700 transition-all duration-150"
                     >Saznaj više
                     <svg
-                        fill="#15803d"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 55.752 55.752"
-                        xml:space="preserve"
-                        class="w-6 h-6"
+                        height="20px"
+                        width="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
                     >
-                        <g>
-                            <path
-                                d="M43.006,23.916c-0.28-0.282-0.59-0.52-0.912-0.727L20.485,1.581c-2.109-2.107-5.527-2.108-7.637,0.001 c-2.109,2.108-2.109,5.527,0,7.637l18.611,18.609L12.754,46.535c-2.11,2.107-2.11,5.527,0,7.637c1.055,1.053,2.436,1.58,3.817,1.58 s2.765-0.527,3.817-1.582l21.706-21.703c0.322-0.207,0.631-0.444,0.912-0.727c1.08-1.08,1.598-2.498,1.574-3.912 C44.605,26.413,44.086,24.993,43.006,23.916z"
-                            ></path>
-                        </g>
+                        <path
+                            d="M5 12H19M19 12L13 6M19 12L13 18"
+                            stroke="#15803d"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
                     </svg>
                 </Link>
             </div>
@@ -186,23 +177,21 @@ onMounted(() => {
                 />
                 <Link
                     href="/product/balance"
-                    class="absolute bottom-10 right-10 text-purple-700 text-lg font-bold flex items-center hover:underline"
+                    class="absolute bottom-10 right-10 text-purple-700 text-lg font-bold flex items-center border-b-4 border-transparent hover:border-purple-700 transition-all duration-150"
                     >Saznaj više
                     <svg
-                        fill="#7e22ce"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 55.752 55.752"
-                        xml:space="preserve"
-                        class="w-6 h-6"
+                        height="20px"
+                        width="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
                     >
-                        <g>
-                            <path
-                                d="M43.006,23.916c-0.28-0.282-0.59-0.52-0.912-0.727L20.485,1.581c-2.109-2.107-5.527-2.108-7.637,0.001 c-2.109,2.108-2.109,5.527,0,7.637l18.611,18.609L12.754,46.535c-2.11,2.107-2.11,5.527,0,7.637c1.055,1.053,2.436,1.58,3.817,1.58 s2.765-0.527,3.817-1.582l21.706-21.703c0.322-0.207,0.631-0.444,0.912-0.727c1.08-1.08,1.598-2.498,1.574-3.912 C44.605,26.413,44.086,24.993,43.006,23.916z"
-                            ></path>
-                        </g>
+                        <path
+                            d="M5 12H19M19 12L13 6M19 12L13 18"
+                            stroke="#7e22ce"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
                     </svg>
                 </Link>
             </div>
@@ -253,23 +242,21 @@ onMounted(() => {
                 />
                 <Link
                     href="/product/cbg"
-                    class="absolute bottom-10 right-10 text-orange-700 text-lg font-bold flex items-center hover:underline"
+                    class="absolute bottom-10 right-10 text-orange-700 text-lg font-bold flex items-center border-b-4 border-transparent hover:border-orange-700 transition-all duration-150"
                     >Saznaj više
                     <svg
-                        fill="#c2410c"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 55.752 55.752"
-                        xml:space="preserve"
-                        class="w-6 h-6"
+                        height="20px"
+                        width="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
                     >
-                        <g>
-                            <path
-                                d="M43.006,23.916c-0.28-0.282-0.59-0.52-0.912-0.727L20.485,1.581c-2.109-2.107-5.527-2.108-7.637,0.001 c-2.109,2.108-2.109,5.527,0,7.637l18.611,18.609L12.754,46.535c-2.11,2.107-2.11,5.527,0,7.637c1.055,1.053,2.436,1.58,3.817,1.58 s2.765-0.527,3.817-1.582l21.706-21.703c0.322-0.207,0.631-0.444,0.912-0.727c1.08-1.08,1.598-2.498,1.574-3.912 C44.605,26.413,44.086,24.993,43.006,23.916z"
-                            ></path>
-                        </g>
+                        <path
+                            d="M5 12H19M19 12L13 6M19 12L13 18"
+                            stroke="#c2410c"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
                     </svg>
                 </Link>
             </div>
@@ -279,12 +266,16 @@ onMounted(() => {
 
 <style scoped>
 .trait-shadow {
-    filter: drop-shadow(0px 2px 2px rgb(0, 0, 0));
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.8))
+        drop-shadow(0px 4px 1px rgba(0, 0, 0, 0.6))
+        drop-shadow(0px 6px 1px rgba(0, 0, 0, 0.4))
+        drop-shadow(0px 8px 1px rgba(0, 0, 0, 0.2));
 }
 .trait {
     text-align: center;
     font-size: 1.2rem;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8),
-        -0.5px -0.5px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px rgb(0, 0, 0), 0 2px 1px rgba(0, 0, 0, 0.8),
+        0 4px 1px rgba(0, 0, 0, 0.6), 0 6px 1px rgba(0, 0, 0, 0.4),
+        -1px 0 rgb(0, 0, 0), -1px -1px rgb(0, 0, 0);
 }
 </style>

@@ -1,10 +1,16 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { useCartStore } from "@/cart";
 import gsap from "gsap";
 
-const props = defineProps({
-    addToCart: Function,
-});
+const cart = useCartStore();
+
+function addDummyItem() {
+    cart.addToCart({
+        id: cart.totalQuantity,
+        name: "Artikl " + cart.totalQuantity,
+    });
+}
 
 const products = ref([
     {
@@ -196,7 +202,7 @@ onUnmounted(() => {
                 </li>
             </ul>
             <button
-                @click="addToCart"
+                @click="addDummyItem"
                 class="px-8 py-4 xl:px-10 xl:py-6 text-2xl xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold border-2 shadow-md transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-monserat text-shadow"
                 :class="[
                     currentProduct.style.linearGradient,

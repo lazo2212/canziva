@@ -20,6 +20,8 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "gsap": "^3.12.7"
+        "gsap": "^3.12.7",
+        "pinia": "^3.0.2",
+        "pinia-plugin-persistedstate": "^4.2.0"
     }
 }
