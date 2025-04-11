@@ -8,10 +8,13 @@ const yearNow = new Date().getFullYear();
     <Head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </Head>
+
     <Nav />
-    <main class="w-full lg:max-w-7xl m-auto mt-[100px] py-12 px-5">
+
+    <main class="w-full lg:max-w-7xl m-auto mt-[100px] py-12 px-5 z-0">
         <slot></slot>
     </main>
+
     <footer class="relative border-t-2 py-20">
         <div class="flex">
             <div class="w-1/2 m-auto flex flex-col items-center justify-center">
@@ -63,8 +66,8 @@ const yearNow = new Date().getFullYear();
                     <p class="text-lg">34 000 Požega</p>
                     <p class="text-lg">Hrvatska</p>
                     <p>
-                        <a class="text-lg" href="tel:+38517777777"
-                            >Tel: +385 1 777 7777</a
+                        <a class="text-lg" href="tel:+385992002123"
+                            >Tel: +385 99 200 2123</a
                         >
                     </p>
                     <p>

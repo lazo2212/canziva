@@ -13,7 +13,7 @@ const props = defineProps({
     >
         <Link
             href="/product/cbd"
-            class="relative w-[400px] h-64 rounded-2xl text-white bg-gradient-to-br from-green-800 to-green-400 p-4 hover:shadow-md hover:shadow-black transition duration-300 scale-95 hover:scale-100"
+            class="relative w-[400px] h-64 rounded-2xl text-white bg-gradient-to-br from-green-800 to-green-400 p-4 hover:shadow-md hover:shadow-black/60 transition duration-300 scale-95 hover:scale-100"
         >
             <span
                 class="absolute top-3 left-28 text-green-300 text-3xl font-monserat"
@@ -42,12 +42,12 @@ const props = defineProps({
             <img
                 src="/images/logo-cbd.svg"
                 alt="cbd"
-                class="absolute bottom-2 right-0 w-36 h-36"
+                class="absolute bottom-2 right-0 w-36 h-36 card-logo"
             />
         </Link>
         <Link
             href="/product/balance"
-            class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-purple-800 to-purple-400 text-white text-3xl p-4 group hover:shadow-md hover:shadow-black transition duration-300 scale-95 hover:scale-100"
+            class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-purple-800 to-purple-400 text-white text-3xl p-4 group hover:shadow-md hover:shadow-black/60 transition duration-300 scale-95 hover:scale-100"
         >
             <span
                 class="absolute top-3 left-28 text-purple-400 text-2xl font-monserat rotate-3"
@@ -76,12 +76,12 @@ const props = defineProps({
             <img
                 src="/images/logo-balance.svg"
                 alt="balance"
-                class="absolute bottom-2 right-0 w-36 h-36"
+                class="absolute bottom-2 right-0 w-36 h-36 card-logo"
             />
         </Link>
         <Link
             href="/product/cbg"
-            class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-orange-800 to-orange-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black transition duration-300 scale-95 hover:scale-100"
+            class="relative w-[400px] h-64 rounded-2xl bg-gradient-to-br from-orange-800 to-orange-400 text-white text-3xl p-4 hover:shadow-md hover:shadow-black/60 transition duration-300 scale-95 hover:scale-100"
         >
             <span
                 class="absolute top-3 left-16 text-orange-200 text-xl font-monserat"
@@ -110,8 +110,14 @@ const props = defineProps({
             <img
                 src="/images/logo-cbg.svg"
                 alt="cbg"
-                class="absolute bottom-2 right-0 w-36 h-36"
+                class="absolute bottom-2 right-0 w-36 h-36 card-logo"
             />
         </Link>
     </div>
 </template>
+
+<style scoped>
+.card-logo {
+    filter: drop-shadow(2px 2px rgba(0, 0, 0, 0.5));
+}
+</style>

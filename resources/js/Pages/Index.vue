@@ -57,7 +57,7 @@ onMounted(() => {
 
         <!-- TRAITS RAZDVAJAČ -->
         <div
-            class="parallax-section flex justify-between gap-14 py-12 px-8 mt-28 mb-40 bg-green-50 shadow-md shadow-gray-400 rounded-lg"
+            class="parallax-section flex justify-between gap-14 py-12 px-8 mt-20 mb-40 bg-green-50 shadow-md shadow-black/60 rounded-lg"
         >
             <span
                 class="relative flex justify-center items-center h-36 w-36"
@@ -83,7 +83,7 @@ onMounted(() => {
         </div>
         <!-- CBD SEKCIJA -->
         <section
-            class="parallax-section h-[60vh] flex items-center justify-center bg-green-50 shadow-md shadow-gray-400 rounded-lg my-16"
+            class="parallax-section h-[60vh] flex items-center justify-center bg-green-50 shadow-md shadow-black/60 rounded-lg my-16"
         >
             <div
                 class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-tl-lg rounded-bl-lg"
@@ -148,7 +148,7 @@ onMounted(() => {
         </section>
         <!-- BALANCE SEKCIJA -->
         <section
-            class="parallax-section h-[60vh] flex items-center justify-center bg-purple-50 shadow-md shadow-gray-400 rounded-lg my-16"
+            class="parallax-section h-[60vh] flex items-center justify-center bg-purple-50 shadow-md shadow-black/60 rounded-lg my-16"
         >
             <div class="h-full w-1/2 relative p-10 ps-24">
                 <h2 class="text-3xl font-bold mb-4">
@@ -212,7 +212,7 @@ onMounted(() => {
         </section>
         <!-- CBG SEKCIJA -->
         <section
-            class="parallax-section h-[60vh] flex items-center justify-center bg-orange-50 shadow-md shadow-gray-400 rounded-lg my-16"
+            class="parallax-section h-[60vh] flex items-center justify-center bg-orange-50 shadow-md shadow-black/60 rounded-lg my-16"
         >
             <div
                 class="bg-[url('/images/cbd-pasta.jpg')] bg-cover bg-no-repeat h-full w-1/2 rounded-tl-lg rounded-bl-lg"

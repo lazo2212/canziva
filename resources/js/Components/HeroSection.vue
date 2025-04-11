@@ -19,10 +19,12 @@ const products = ref([
             hex: "#38a169",
             color: "text-green-600",
             bg: "bg-green-700",
+            borderLight: "border-green-200",
             border: "border-green-700",
             linearGradient: "from-green-700 to-green-400",
             background: "bg-green-50",
-            shadow: "shadow-green",
+            shadowLight: "shadow-green-600/30",
+            shadowDark: "shadow-green-700/60",
         },
     },
     {
@@ -37,10 +39,12 @@ const products = ref([
             hex: "#6b46c1",
             color: "text-purple-600",
             bg: "bg-purple-700",
+            borderLight: "border-purple-200",
             border: "border-purple-700",
             linearGradient: "from-purple-700 to-purple-400",
             background: "bg-purple-50",
-            shadow: "shadow-purple",
+            shadowLight: "shadow-purple-600/30",
+            shadowDark: "shadow-purple-700/60",
         },
     },
     {
@@ -55,10 +59,12 @@ const products = ref([
             hex: "#ed8936",
             color: "text-orange-600",
             bg: "bg-orange-700",
+            borderLight: "border-orange-200",
             border: "border-orange-700",
             linearGradient: "from-orange-700 to-orange-400",
             background: "bg-orange-50",
-            shadow: "shadow-orange",
+            shadowLight: "shadow-orange-600/30",
+            shadowDark: "shadow-orange-700/60",
         },
     },
 ]);
@@ -142,8 +148,12 @@ onUnmounted(() => {
 <template>
     <!-- HERO SECTION -->
     <section
-        class="w-full flex justify-center py-10 px-24 product-card rounded-lg shadow-md shadow-gray-400"
-        :class="[currentProduct.style.background, currentProduct.style.shadow]"
+        class="w-full flex justify-center py-10 px-24 product-card rounded-lg shadow-lg border-2"
+        :class="[
+            currentProduct.style.background,
+            currentProduct.style.shadowLight,
+            currentProduct.style.borderLight,
+        ]"
     >
         <div
             class="w-3/5 flex flex-col items-start justify-center product-content"
@@ -154,7 +164,7 @@ onUnmounted(() => {
                 class="text-5xl xl:text-6xl select-none font-monserat uppercase"
             >
                 <span
-                    class="font-bold drop-shadow-[0_2px_2px_rgb(0,0,0)]"
+                    class="font-extrabold"
                     :class="currentProduct.style.color"
                 >
                     {{ currentProduct.title }}
@@ -187,8 +197,12 @@ onUnmounted(() => {
             </ul>
             <button
                 @click="addToCart"
-                class="px-8 py-4 xl:px-10 xl:py-6 text-2xl xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold shadow-md shadow-black transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-monserat text-shadow"
-                :class="currentProduct.style.linearGradient"
+                class="px-8 py-4 xl:px-10 xl:py-6 text-2xl xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold border-2 shadow-md transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-monserat text-shadow"
+                :class="[
+                    currentProduct.style.linearGradient,
+                    currentProduct.style.shadowDark,
+                    currentProduct.style.border,
+                ]"
             >
                 KUPI {{ currentProduct.title }}
             </button>
@@ -200,7 +214,7 @@ onUnmounted(() => {
         </div>
     </section>
     <!-- BUTTONS -->
-    <div class="flex align-center justify-center p-10">
+    <div class="flex align-center justify-center p-16">
         <div class="button-container px-6" v-for="(product, index) in products">
             <button
                 :key="index"
@@ -211,8 +225,8 @@ onUnmounted(() => {
                 :class="[
                     'px-6 py-4 text-lg xl:text-2xl font-bold rounded-md transition-all duration-150 select-none border-4 border-y-0 font-monserat',
                     index === currentIndex
-                        ? `${product.style.border} ${product.style.color}`
-                        : 'border-transparent text-gray-600',
+                        ? [product.style.border, product.style.color]
+                        : 'border-transparent text-gray-400',
                 ]"
             >
                 {{ product.title }}
