@@ -46,7 +46,7 @@ onMounted(() => {
     <Layout>
         <Head title="Home" />
 
-        <HeroSection :add-to-cart="addToCart" />
+        <HeroSection />
 
         <!-- TRAITS RAZDVAJAČ -->
         <div

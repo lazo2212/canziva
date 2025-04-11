@@ -187,15 +187,63 @@ const cart = useCartStore();
                         <div class="flex flex-col gap-2 mt-5">
                             <ul>
                                 <li
-                                    v-for="(item, index) in cart.cartItems"
+                                    v-for="item in cart.cartItems"
                                     :key="item.id"
+                                    class="flex items-center justify-between gap-4 p-4 border-b border-gray-200"
                                 >
-                                    {{ item.name }}
-                                    <button @click="cart.removeFromCart(index)">
+                                    <img
+                                        :src="item.image"
+                                        alt="product"
+                                        class="w-32 h-32 object-cover rounded-lg"
+                                    />
+                                    <div class="flex flex-col">
+                                        <span class="font-bold text-lg">
+                                            {{ item.title }}
+                                        </span>
+                                        <span class="text-sm text-gray-500">
+                                            {{ item.price }} €
+                                        </span>
+                                        <span class="text-sm text-gray-500">
+                                            Količina: {{ item.quantity }}
+                                        </span>
+                                        <div>
+                                            <button
+                                                class="py-1 px-2 mx-1 rounded-full bg-green-600 text-white"
+                                                @click="cart.addToCart(item)"
+                                                title="Dodaj u košaricu"
+                                                aria-label="Dodaj u košaricu"
+                                            >
+                                                +</button
+                                            ><button
+                                                class="py-1 px-2 mx-1 rounded-full bg-green-600 text-white"
+                                                @click="
+                                                    cart.removeFomCartOne(
+                                                        item.id
+                                                    )
+                                                "
+                                                title="Ukloni iz košarice"
+                                                aria-label="Ukloni iz košarice"
+                                            >
+                                                -
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button
+                                        @click="cart.removeFromCart(item.id)"
+                                        class="py-2 px-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition duration-300 ease-in-out"
+                                        title="Ukloni iz košarice"
+                                        aria-label="Ukloni iz košarice"
+                                    >
                                         Ukloni
                                     </button>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-lg font-bold">Ukupno:</span>
+                            <span class="text-lg font-bold">
+                                {{ cart.totalPrice }} €
+                            </span>
                         </div>
                         <a
                             href="#"

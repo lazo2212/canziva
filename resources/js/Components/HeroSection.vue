@@ -5,16 +5,23 @@ import gsap from "gsap";
 
 const cart = useCartStore();
 
-function addDummyItem() {
+function addItemToCart() {
     cart.addToCart({
-        id: cart.totalQuantity,
-        name: "Artikl " + cart.totalQuantity,
+        id: currentProduct.value.id,
+        title: currentProduct.value.fullName,
+        price: currentProduct.value.price,
+        image: currentProduct.value.image,
+        quantity: 1,
     });
 }
 
 const products = ref([
     {
+        id: 1,
         title: "CBD",
+        fullName: "CBD pasta punog spektra",
+        price: 100,
+        image: "/images/logo-cbd.svg",
         benefits: [
             "100% CBD ekstrakt",
             "THC ≤ 0,2%",
@@ -34,7 +41,11 @@ const products = ref([
         },
     },
     {
+        id: 2,
         title: "BALANCE",
+        fullName: "BALANCE pasta punog spektra",
+        price: 100,
+        image: "/images/logo-balance.svg",
         benefits: [
             "50% CBD, 50% CBG ekstrakt",
             "THC ≤ 0,2%",
@@ -54,7 +65,11 @@ const products = ref([
         },
     },
     {
+        id: 3,
         title: "CBG",
+        fullName: "CBG pasta punog spektra",
+        price: 100,
+        image: "/images/logo-cbg.svg",
         benefits: [
             "100% CBG ekstrakt",
             "THC ≤ 0,2%",
@@ -202,7 +217,7 @@ onUnmounted(() => {
                 </li>
             </ul>
             <button
-                @click="addDummyItem"
+                @click="addItemToCart"
                 class="px-8 py-4 xl:px-10 xl:py-6 text-2xl xl:text-4xl bg-gradient-to-br text-white rounded-lg font-bold border-2 shadow-md transition-all duration-150 active:shadow-none active:translate-y-1 select-none font-monserat text-shadow"
                 :class="[
                     currentProduct.style.linearGradient,

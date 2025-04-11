@@ -19,6 +19,17 @@ export const useCartStore = defineStore("cart", {
             }
             this.calculateTotal();
         },
+        removeFomCartOne(productId) {
+            const existingProduct = this.cartItems.find(
+                (item) => item.id === productId
+            );
+            if (existingProduct && existingProduct.quantity > 1) {
+                existingProduct.quantity--;
+            } else {
+                this.removeFromCart(productId);
+            }
+            this.calculateTotal();
+        },
         removeFromCart(productId) {
             this.cartItems = this.cartItems.filter(
                 (item) => item.id !== productId
