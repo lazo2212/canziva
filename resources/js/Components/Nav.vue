@@ -152,7 +152,7 @@ const cart = useCartStore();
                 @click="showCart = false"
             >
                 <div
-                    class="relative h-full w-1/3 p-10 bg-white cursor-default transform transition-all duration-300 ease-in-out"
+                    class="relative h-full w-[700px] p-10 bg-white cursor-default transform transition-all duration-300 ease-in-out"
                     :class="
                         showCart
                             ? 'opacity-100 translate-x-0'
@@ -197,13 +197,16 @@ const cart = useCartStore();
                                         class="w-32 h-32 object-cover rounded-lg"
                                     />
                                     <div class="flex flex-col">
-                                        <span class="font-bold text-lg">
+                                        <Link
+                                            :href="item.url"
+                                            class="font-bold text-lg"
+                                        >
                                             {{ item.title }}
-                                        </span>
-                                        <span class="text-sm text-gray-500">
+                                        </Link>
+                                        <span class="text text-gray-500 mb-3">
                                             {{ item.price }} €
                                         </span>
-                                        <span class="text-sm text-gray-500">
+                                        <span class="text-sm">
                                             Količina: {{ item.quantity }}
                                         </span>
                                         <div>
@@ -213,7 +216,20 @@ const cart = useCartStore();
                                                 title="Dodaj u košaricu"
                                                 aria-label="Dodaj u košaricu"
                                             >
-                                                +</button
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    width="15px"
+                                                    height="15px"
+                                                >
+                                                    <path
+                                                        d="M4 12H20M12 4V20"
+                                                        stroke="#ffffff"
+                                                        stroke-width="4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                </svg></button
                                             ><button
                                                 class="py-1 px-2 mx-1 rounded-full bg-green-600 text-white"
                                                 @click="
@@ -224,7 +240,20 @@ const cart = useCartStore();
                                                 title="Ukloni iz košarice"
                                                 aria-label="Ukloni iz košarice"
                                             >
-                                                -
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    width="15px"
+                                                    height="15px"
+                                                >
+                                                    <path
+                                                        d="M6 12L18 12"
+                                                        stroke="#ffffff"
+                                                        stroke-width="4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    ></path>
+                                                </svg>
                                             </button>
                                         </div>
                                     </div>
@@ -245,7 +274,7 @@ const cart = useCartStore();
                                 {{ cart.totalPrice }} €
                             </span>
                         </div>
-                        <a
+                        <Link
                             href="#"
                             class="absolute bottom-4 right-4 flex items-center text-lg text-white font-bold py-2 px-4 bg-gradient-to-br from-green-700 to-green-400 rounded hover:translate-x-1 transition-all duration-300 ease-in-out"
                         >
@@ -264,7 +293,7 @@ const cart = useCartStore();
                                     stroke-linejoin="round"
                                 ></path>
                             </svg>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </aside>

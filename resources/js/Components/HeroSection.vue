@@ -11,6 +11,7 @@ function addItemToCart() {
         title: currentProduct.value.fullName,
         price: currentProduct.value.price,
         image: currentProduct.value.image,
+        url: currentProduct.value.url,
         quantity: 1,
     });
 }
@@ -22,11 +23,12 @@ const products = ref([
         fullName: "CBD pasta punog spektra",
         price: 100,
         image: "/images/logo-cbd.svg",
+        url: "/product/cbd",
         benefits: [
-            "100% CBD ekstrakt",
-            "THC ≤ 0,2%",
             "5000mg CBD smola",
-            "puni spektar kanabinoida",
+            "100% ekstrakt industrijske konoplje",
+            "puni spektar kanabinoida i terpena",
+            "THC ≤ 0,2%",
         ],
         style: {
             hex: "#38a169",
@@ -46,11 +48,12 @@ const products = ref([
         fullName: "BALANCE pasta punog spektra",
         price: 100,
         image: "/images/logo-balance.svg",
+        url: "/product/balance",
         benefits: [
-            "50% CBD, 50% CBG ekstrakt",
-            "THC ≤ 0,2%",
             "2500mg CBD, 2500mg CBG smola",
-            "puni spektar kanabinoida",
+            "100% ekstrakt industrijske konoplje",
+            "puni spektar kanabinoida i terpena",
+            "THC ≤ 0,2%",
         ],
         style: {
             hex: "#6b46c1",
@@ -70,11 +73,12 @@ const products = ref([
         fullName: "CBG pasta punog spektra",
         price: 100,
         image: "/images/logo-cbg.svg",
+        url: "/product/cbg",
         benefits: [
-            "100% CBG ekstrakt",
-            "THC ≤ 0,2%",
             "5000mg CBG smola",
-            "puni spektar kanabinoida",
+            "100%  ekstrakt industrijske konoplje",
+            "puni spektar kanabinoida i terpena",
+            "THC ≤ 0,2%",
         ],
         style: {
             hex: "#ed8936",

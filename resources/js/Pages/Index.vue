@@ -50,7 +50,7 @@ onMounted(() => {
 
         <!-- TRAITS RAZDVAJAČ -->
         <div
-            class="parallax-section flex justify-between py-12 m-10 rounded-lg"
+            class="parallax-section flex justify-between py-12 my-10 rounded-lg"
         >
             <span
                 class="relative flex justify-center items-center h-40 w-40"
@@ -86,29 +86,30 @@ onMounted(() => {
                     <span class="text-green-700">CBD</span> pasta
                 </h2>
                 <p class="mt-2">
-                    CBD (kanabidiol) pasta je prirodni proizvod dobiven iz
-                    industrijske konoplje koji nudi brojne potencijalne
-                    zdravstvene prednosti. Bogata je kanabinoidima, terpenima i
+                    CBD (kanabidiol) pasta je prirodni proizvod, dobiven iz
+                    industrijske konoplje, koja nudi brojne potencijalne
+                    zdravstvene pogodnosti. Bogata je kanabinoidima, terpenima i
                     drugim korisnim spojevima koji podržavaju opće blagostanje
                     organizma.
                 </p>
-                <p class="font-bold mt-2">Prednosti:</p>
+                <p class="font-bold mt-2">Neke od pogodnosti:</p>
                 <ul class="list-disc ps-10 mb-6">
                     <li>Pomaže u smanjenju stresa i anksioznosti</li>
-                    <li>Podržava zdrav san i opuštanje</li>
-                    <li>Može ublažiti bolove i upale</li>
+                    <li>Podržava miran san i opuštanje</li>
+                    <li>Ublažava bolove i upale</li>
                     <li>Doprinosi općem zdravlju imunološkog sustava</li>
                 </ul>
-                <a
+                <Link
                     href="#"
-                    class="flex items-center font-semibold hover:text-green-600 transition-all duration-150"
+                    class="flex items-center w-max font-semibold hover:text-green-600 transition-all duration-150"
+                    download
                     >Preuzmi certifikat
                     <img
                         src="/images/certificate.svg"
                         alt="certificate"
-                        class="w-8 h-8 ms-2"
+                        class="w-10 h-10 ms-2"
                     />
-                </a>
+                </Link>
                 <img
                     class="absolute bottom-5 left-5 opacity-50"
                     src="/images/canabinoid-cbd.svg"
@@ -146,28 +147,30 @@ onMounted(() => {
                     <span class="text-purple-700">BALANCE</span> pasta (CBD/CBG)
                 </h2>
                 <p class="mt-2">
-                    Balance pasta je jedinstveni proizvod koji sadrži
-                    uravnoteženu kombinaciju CBD-a i CBG-a u omjeru 1:1. Ova
-                    sinergija dvaju kanabinoida omogućuje učinkovitiji učinak
-                    zahvaljujući tzv. "entourage efektu".
+                    Balance pasta je jedinstveni prirodni proizvod, dobiven iz
+                    industrijske konoplje, koja sadrži uravnoteženu kombinaciju
+                    CBD-a i CBG-a. Ova sinergija dvaju kanabinoida omogućuje
+                    učinkovitiji učinak zahvaljujući takozvanom "entourage
+                    efektu".
                 </p>
-                <p class="font-bold mt-2">Prednosti:</p>
+                <p class="font-bold mt-2">Neke od pogodnosti:</p>
                 <ul class="list-disc ps-10 mb-6">
                     <li>Pruža uravnotežen učinak opuštanja i fokusa</li>
                     <li>Pomaže u smanjenju stresa i anksioznosti</li>
                     <li>Podržava zdravlje mišića i zglobova</li>
-                    <li>Može poboljšati kvalitetu sna</li>
+                    <li>Poboljšava kvalitetu sna</li>
                 </ul>
-                <a
+                <Link
                     href="#"
-                    class="flex items-center font-semibold hover:text-purple-600 transition-all duration-150"
+                    class="flex items-center w-max font-semibold hover:text-purple-600 transition-all duration-150"
+                    download
                     >Preuzmi certifikat
                     <img
                         src="/images/certificate.svg"
                         alt="certificate"
-                        class="w-8 h-8 ms-2"
+                        class="w-10 h-10 ms-2"
                     />
-                </a>
+                </Link>
                 <img
                     class="absolute bottom-5 left-5 opacity-50"
                     src="/images/canabinoid-balance.svg"
@@ -211,28 +214,27 @@ onMounted(() => {
                     <span class="text-orange-700">CBG</span> pasta
                 </h2>
                 <p class="mt-2">
-                    CBG (kanabigerol) pasta poznata je kao "majka svih
-                    kanabinoida" jer se iz nje tijekom sazrijevanja biljke
-                    stvaraju ostali kanabinoidi. Ova pasta pruža specifične
-                    koristi koje se razlikuju od CBD-a.
+                    CBG (kanabigerol) pasta je prirodni proizvod, dobiven iz
+                    industrijske konoplje. Ova pasta pruža specifične koristi
+                    koje se razlikuju od CBD-a.
                 </p>
-                <p class="font-bold mt-2">Prednosti:</p>
+                <p class="font-bold mt-2">Neke od pogodnosti:</p>
                 <ul class="list-disc ps-10 mb-6">
                     <li>Potiče fokus i mentalnu jasnoću</li>
                     <li>Može smanjiti upale i ublažiti bol</li>
                     <li>Podržava zdravlje probavnog sustava</li>
                     <li>Pomaže u regulaciji raspoloženja</li>
                 </ul>
-                <a
+                <Link
                     href="#"
-                    class="flex items-center font-semibold hover:text-orange-600 transition-all duration-150"
+                    class="flex items-center w-max font-semibold hover:text-orange-600 transition-all duration-150"
                     >Preuzmi certifikat
                     <img
                         src="/images/certificate.svg"
                         alt="certificate"
-                        class="w-8 h-8 ms-2"
+                        class="w-10 h-10 ms-2"
                     />
-                </a>
+                </Link>
                 <img
                     class="absolute bottom-5 left-5 opacity-50"
                     src="/images/canabinoid-cbg.svg"
