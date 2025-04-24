@@ -14,6 +14,7 @@ function addItemToCart() {
         url: currentProduct.value.url,
         quantity: 1,
     });
+    cart.openCart();
 }
 
 const products = ref([
@@ -185,9 +186,7 @@ onUnmounted(() => {
             @mouseenter="stopAutoChange"
             @mouseleave="startAutoChange"
         >
-            <h2
-                class="text-5xl xl:text-6xl select-none font-monserat uppercase"
-            >
+            <h2 class="text-5xl xl:text-6xl select-none font-monserat">
                 <span
                     class="font-extrabold"
                     :class="currentProduct.style.color"

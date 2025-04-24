@@ -2,8 +2,21 @@
 import { Head } from "@inertiajs/vue3";
 import Layout from "@/Layouts/Layout.vue";
 import { onMounted } from "vue";
+import { useCartStore } from "@/cart";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+const cart = useCartStore();
+function addItemToCart() {
+    cart.addToCart({
+        id: 1,
+        title: "CBD pasta punog spektra",
+        price: 100,
+        image: "/images/logo-cbd.svg",
+        url: "/product/cbd",
+        quantity: 1,
+    });
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +50,7 @@ onMounted(() => {
             <title>CBD full spectrum pasta</title>
             <meta
                 name="description"
-                content="Naša CBD pasta je čisti extrakt kanabidiola (CBD) sa punim spektrom ostalih kanabinoida i terpena sa manje od 2% THC-a. Saznaj više o našoj CBD pasti i njenim prednostima."
+                content="Naša CBD pasta je čisti extrakt kanabidiola (CBD) sa punim spektrom ostalih kanabinoida i terpena te sa manje od 0,2% THC-a. Saznaj više o našoj CBD pasti i njenim prednostima."
             />
             <meta
                 name="keywords"
@@ -48,12 +61,12 @@ onMounted(() => {
 
         <div class="w-full mb-10">
             <section
-                class="mb-10 shadow-md shadow-gray-400 bg-green-50 rounded-lg px-8 py-12 leading-6 parallax-section"
+                class="mb-10 shadow-md shadow-gray-400 bg-green-50 rounded-lg px-8 py-16 leading-6 parallax-section border-2 border-green-200"
             >
                 <div class="flex justify-center items-center">
                     <div class="w-1/2">
                         <h1 class="text-3xl font-bold font-monserat mb-2">
-                            CBD full spectrum pasta - 5ml
+                            CBD pasta punog spektra - 5ml
                         </h1>
                         <p
                             class="text-3xl text-gray-500 font-semibold font-monserat mb-4"
@@ -97,10 +110,13 @@ onMounted(() => {
                                 ✔ veganski i bez glutena
                             </li>
                         </ul>
-                        <p class="text-gray-500">
-                            Dodatak prehrani - nije nadomjestak uravnoteženoj
-                            prehrani.
-                        </p>
+
+                        <button
+                            @click="addItemToCart"
+                            class="bg-green-500 text-white font-bold py-2 px-4 rounded mt-4"
+                        >
+                            Dodaj u košaricu
+                        </button>
                     </div>
 
                     <div>
@@ -114,7 +130,7 @@ onMounted(() => {
             </section>
 
             <article
-                class="mb-8 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
+                class="mb-8 shadow-md shadow-gray-400 bg-green-50 border-2 border-green-200 rounded-lg p-14 leading-7 parallax-section"
             >
                 <h2 class="font-bold text-xl mb-2">
                     Što je CBD i za što se koristi?
@@ -141,7 +157,7 @@ onMounted(() => {
             </article>
 
             <article
-                class="mb-8 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
+                class="mb-8 shadow-md shadow-gray-400 bg-green-50 border-2 border-green-200 rounded-lg p-14 leading-7 parallax-section"
             >
                 <h2 class="font-bold text-xl mb-2">CBD pasta ili smola</h2>
                 <p>
@@ -171,7 +187,7 @@ onMounted(() => {
             </article>
 
             <article
-                class="mb-8 shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
+                class="mb-8 shadow-md shadow-gray-400 bg-green-50 border-2 border-green-200 rounded-lg p-14 leading-7 parallax-section"
             >
                 <h2 class="font-bold text-xl mb-2">
                     Pravilno doziranje CBD paste
@@ -216,7 +232,7 @@ onMounted(() => {
             </article>
 
             <article
-                class="shadow-md shadow-gray-400 bg-green-50 rounded-lg p-14 leading-7 parallax-section"
+                class="shadow-md shadow-gray-400 bg-green-50 border-2 border-green-200 rounded-lg p-14 leading-7 parallax-section"
             >
                 <h2 class="font-bold text-xl mb-2">
                     Moguće nuspojave prilikom korištenja CBD smole

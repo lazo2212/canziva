@@ -8,7 +8,7 @@ const props = defineProps({
 
 <template>
     <div
-        class="fixed left-0 top-[100px] w-full flex justify-center gap-5 p-8 transition-all duration-300 ease-in-out shadow bg-white z-40 cursor-default select-none"
+        class="fixed left-0 top-[100px] w-screen flex justify-center gap-5 p-8 transition-all duration-300 ease-in-out shadow bg-white z-40 cursor-default select-none"
         :class="visible ? 'opacity-100 visible' : 'opacity-0 invisible'"
     >
         <Link

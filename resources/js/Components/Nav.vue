@@ -5,15 +5,14 @@ import { useCartStore } from "@/cart";
 import Submenu from "./Submenu.vue";
 
 const showSubmenu = ref(false);
-const showCart = ref(false);
 const showUserMenu = ref(false);
 
 const cart = useCartStore();
 </script>
 
 <template>
-    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-        <nav class="flex justify-between items-center max-w-screen-2xl mx-auto">
+    <header class="fixed top-0 left-0 w-screen bg-white shadow z-50">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
             <!-- LOGO -->
             <Link href="/"
                 ><img
@@ -68,7 +67,7 @@ const cart = useCartStore();
                 <!-- KOŠARICA -->
                 <div
                     class="relative h-[100px] flex items-center px-10 border-b-2 border-transparent hover:border-black/70 hover:opacity-60 transition-all duration-300 ease-in-out cursor-pointer"
-                    @click="showCart = !showCart"
+                    @click="cart.toggleCart()"
                 >
                     <img src="/images/cart.svg" alt="cart" class="h-9 w-9" />
                     <span
@@ -79,7 +78,7 @@ const cart = useCartStore();
                 </div>
                 <!-- KORISNIK -->
                 <div
-                    class="relative h-[100px] flex items-center px-4 xl:px-10 border-b-2 border-transparent group hover:border-black/70 hover:opacity-60 transition-all duration-300 ease-in-out cursor-pointer"
+                    class="relative h-[100px] flex items-center px-10 border-b-2 border-transparent group hover:border-black/70 hover:opacity-60 transition-all duration-300 ease-in-out cursor-pointer"
                     @click="showUserMenu = !showUserMenu"
                 >
                     <img src="/images/user.svg" alt="user" class="h-9 w-9" />
@@ -96,13 +95,13 @@ const cart = useCartStore();
         <div class="relative">
             <aside
                 class="absolute top-[-100px] right-0 w-full h-screen bg-black/50 cursor-not-allowed flex justify-end transition-all duration-300 ease-in-out"
-                :class="showCart ? 'visible' : 'invisible'"
-                @click="showCart = false"
+                :class="cart.showCart ? 'visible' : 'invisible'"
+                @click="cart.closeCart()"
             >
                 <div
                     class="relative h-full w-[700px] p-10 bg-white cursor-default transform transition-all duration-300 ease-in-out"
                     :class="
-                        showCart
+                        cart.showCart
                             ? 'opacity-100 translate-x-0'
                             : 'opacity-0 translate-x-full'
                     "
@@ -110,7 +109,7 @@ const cart = useCartStore();
                 >
                     <button
                         class="absolute top-2 right-4 px-4 py-2 fill-black/40 hover:fill-black border border-transparent hover:border-black rounded transition-all duration-300 ease-in-out"
-                        @click="showCart = false"
+                        @click="cart.closeCart()"
                     >
                         <!-- SVG ICON -->
                         <svg
@@ -137,7 +136,7 @@ const cart = useCartStore();
                                 <li
                                     v-for="item in cart.cartItems"
                                     :key="item.id"
-                                    class="flex items-center justify-between border-b border-gray-200"
+                                    class="flex items-center justify-between border-b border-gray-200 py-5"
                                 >
                                     <div class="flex items-center gap-4">
                                         <img

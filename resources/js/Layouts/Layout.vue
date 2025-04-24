@@ -11,7 +11,7 @@ const yearNow = new Date().getFullYear();
 
     <Nav />
 
-    <main class="w-full lg:max-w-7xl m-auto mt-[100px] py-12 px-5 z-0">
+    <main class="w-full max-w-7xl mx-auto mt-[100px] py-12 px-5 z-0">
         <slot></slot>
     </main>
 
@@ -61,20 +61,19 @@ const yearNow = new Date().getFullYear();
             </div>
             <div class="w-1/2 flex flex-col justify-between">
                 <div>
-                    <p class="text-2xl font-bold">Kontaktiraj nas</p>
-                    <p class="text-lg">Vranduk 39</p>
-                    <p class="text-lg">34 000 Požega</p>
-                    <p class="text-lg">Hrvatska</p>
-                    <p>
-                        <a class="text-lg" href="tel:+385992002123"
-                            >Tel: +385 99 200 2123</a
-                        >
-                    </p>
+                    <p class="text-2xl font-bold">Kontakt:</p>
                     <p>
                         <a class="text-lg" href="mailto:canziva@gmail.com"
                             >Email: canziva@gmail.com</a
                         >
                     </p>
+                    <p>
+                        <a class="text-lg" href="tel:+385992002123"
+                            >Tel: +385 99 200 2123</a
+                        >
+                    </p>
+                    <p class="text-lg">Vranduk 39, 34 000 Požega</p>
+                    <p class="text-lg">Hrvatska</p>
                 </div>
                 <p class="text-xl font-semibold">
                     &copy; {{ yearNow }} CANZIVA. Sva prava pridržana.
