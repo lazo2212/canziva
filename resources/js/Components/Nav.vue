@@ -67,7 +67,7 @@ const cart = useCartStore();
                 <!-- KOŠARICA -->
                 <div
                     class="relative h-[100px] flex items-center px-10 border-b-2 border-transparent hover:border-black/70 hover:opacity-60 transition-all duration-300 ease-in-out cursor-pointer"
-                    @click="cart.toggleCart()"
+                    @click="cart.openCart()"
                 >
                     <img src="/images/cart.svg" alt="cart" class="h-9 w-9" />
                     <span
