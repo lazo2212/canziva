@@ -40,8 +40,6 @@ onMounted(() => {
 });
 </script>
 
-<!-- složit da pri manjim rezolucijama kartice dolaze scale 0.8 na 1-->
-
 <template>
     <Layout>
         <Head title="Home" />
@@ -255,6 +253,45 @@ onMounted(() => {
                         <path
                             d="M5 12H19M19 12L13 6M19 12L13 18"
                             stroke="#c2410c"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                    </svg>
+                </Link>
+            </div>
+        </section>
+        <!-- O NAMA -->
+        <section
+            class="parallax-section relative h-[800px] flex flex-col items-center justify-center shadow-md shadow-black/60 rounded-lg my-16 overflow-hidden"
+        >
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+                style="background-image: url('/images/o-nama-bg.jpg')"
+            ></div>
+            <div
+                class="relative z-10 flex flex-col items-center justify-center w-full h-full text-white bg-black bg-opacity-50"
+            >
+                <h2 class="text-3xl font-bold mb-4">O nama</h2>
+                <p class="text-center max-w-2xl">
+                    Naša tvrtka se ponosi proizvodnjom visokokvalitetnih
+                    kanabinoidnih proizvoda iz industrijske konoplje. Naš cilj
+                    je pružiti prirodne i učinkovite proizvode koji podržavaju
+                    zdravlje i dobrobit naših kupaca.
+                </p>
+                <Link
+                    href="/about"
+                    class="mt-6 text-white text-lg font-bold flex items-center border-b-4 border-transparent hover:border-white transition-all duration-150"
+                    >Saznaj više
+                    <svg
+                        height="20px"
+                        width="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                    >
+                        <path
+                            d="M5 12H19M19 12L13 6M19 12L13 18"
+                            stroke="#fff"
                             stroke-width="4"
                             stroke-linecap="round"
                             stroke-linejoin="round"
