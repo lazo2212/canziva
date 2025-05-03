@@ -10,23 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     gsap.utils.toArray(".gsection").forEach((section, index) => {
-        gsap.fromTo(
-            section,
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    end: "top 30%",
-                    scrub: true,
-                    toggleActions: "play none none none",
-                },
-            }
-        );
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top top",
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+        });
     });
 });
 </script>
@@ -36,7 +26,7 @@ onMounted(() => {
         <Head title="O nama" />
 
         <div
-            class="gsection h-[80vh] w-full relative overflow-hidden mb-8 rounded-xl"
+            class="gsection h-screen w-full relative overflow-hidden rounded-xl"
         >
             <div
                 class="absolute top-0 left-0 w-full h-full bg-cover bg-center"
@@ -55,7 +45,7 @@ onMounted(() => {
         </div>
 
         <div
-            class="gsection h-[80vh] w-full flex items-center justify-center bg-gray-100 mb-8 rounded-xl"
+            class="gsection h-screen w-full flex items-center justify-center bg-gray-100 rounded-xl"
         >
             <div class="max-w-4xl text-center">
                 <h2 class="text-4xl font-bold mb-6">Naša misija</h2>
@@ -69,7 +59,7 @@ onMounted(() => {
         </div>
 
         <div
-            class="gsection h-[80vh] w-full relative overflow-hidden mb-8 rounded-xl"
+            class="gsection h-screen w-full relative overflow-hidden rounded-xl"
         >
             <div
                 class="absolute top-0 left-0 w-full h-full bg-cover bg-center"
@@ -88,7 +78,7 @@ onMounted(() => {
         </div>
 
         <div
-            class="gsection h-[80vh] w-full flex items-center justify-center bg-gray-100 rounded-xl"
+            class="gsection h-screen w-full flex items-center justify-center bg-gray-100 rounded-xl"
         >
             <div class="max-w-4xl text-center">
                 <h2 class="text-4xl font-bold mb-6">Naš cilj</h2>

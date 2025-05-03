@@ -7,62 +7,75 @@ import Layout from "@/Layouts/Layout.vue";
     <Layout>
         <Head title="Kontakti" />
 
-        <div class="w-full">
-            <h1 class="text-4xl">Kontakti</h1>
+        <div class="w-full text-center">
+            <div>
+                <h1 class="text-3xl font-semibold">Kontaktirajte nas</h1>
 
-            <div class="mt-8">
-                <h2 class="text-2xl font-semibold">Kontaktirajte nas</h2>
-                <p class="mt-4">
+                <p class="mt-2">
                     Ako imate bilo kakva pitanja ili trebate pomoć, slobodno nas
                     kontaktirajte putem dolje navedenih informacija.
                 </p>
 
-                <div class="mt-6">
-                    <p><strong>Telefon:</strong> +385 123 456 789</p>
-                    <p><strong>E-mail:</strong> info@canziva.hr</p>
-                    <p>
-                        <strong>Adresa:</strong> Ulica Slobode 123, Zagreb,
-                        Hrvatska
+                <div class="mt-4">
+                    <p class="font-bold mt-2">
+                        <a href="mailto:canziva@gmail.com">canziva@gmail.hr</a>
+                    </p>
+                    <p class="font-bold mt-2">
+                        <a href="tel:+385992002123">+385 99 200 2123</a>
+                    </p>
+                    <p class="font-bold mt-2">
+                        Vranduk 39, 34 000 Požega, Hrvatska
                     </p>
                 </div>
 
-                <div class="mt-8">
-                    <h3 class="text-xl font-semibold">Društvene mreže</h3>
-                    <ul class="mt-4 space-y-2">
-                        <li>
-                            <a
-                                href="https://facebook.com"
-                                target="_blank"
-                                class="text-blue-500 hover:underline"
-                                >Facebook</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://twitter.com"
-                                target="_blank"
-                                class="text-blue-500 hover:underline"
-                                >Twitter</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                class="text-blue-500 hover:underline"
-                                >Instagram</a
-                            >
-                        </li>
-                    </ul>
+                <div class="mt-20">
+                    <h2 class="text-3xl font-semibold">Društvene mreže</h2>
+
+                    <p class="mt-2">
+                        Pratite nas na društvenim mrežama kako biste bili u toku
+                        s našim najnovijim vijestima i ponudama.
+                    </p>
+
+                    <div class="flex justify-center py-8 gap-10">
+                        <a
+                            href="https://www.instagram.com/canziva/"
+                            target="_blank"
+                            class="mx-2"
+                        >
+                            <img
+                                src="/images/instagram.svg"
+                                alt="Instagram"
+                                class="h-[80px] opacity-60 hover:opacity-100 transition duration-300"
+                            />
+                        </a>
+                        <a
+                            href="https://www.facebook.com/canziva/"
+                            target="_blank"
+                            class="mx-2"
+                        >
+                            <img
+                                src="/images/facebook.svg"
+                                alt="Facebook"
+                                class="h-[80px] opacity-60 hover:opacity-100 transition duration-300"
+                            />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/company/canziva/"
+                            target="_blank"
+                            class="mx-2"
+                        >
+                            <img
+                                src="/images/linkedin.svg"
+                                alt="LinkedIn"
+                                class="h-[80px] opacity-60 hover:opacity-100 transition duration-300"
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-8">
-                <h2 class="text-2xl font-semibold">Naša lokacija</h2>
-                <p class="mt-4">
-                    Naš ured se nalazi u Požegi, Hrvatska. Slobodno nas
-                    posjetite!
-                </p>
+            <div class="mt-10">
+                <h2 class="text-3xl font-semibold">Naša lokacija</h2>
 
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1402.4362750779358!2d17.69821740648373!3d45.3311960368479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475d9b327c67f12f%3A0xef176ffda1aacf0!2sVranduk%20ul.%2039%2C%2034000%2C%20Po%C5%BEega!5e0!3m2!1shr!2shr!4v1746201953295!5m2!1shr!2shr"
@@ -77,11 +90,6 @@ import Layout from "@/Layouts/Layout.vue";
                     frameborder="0"
                 >
                 </iframe>
-
-                <p class="mt-2">
-                    Ako imate bilo kakvih pitanja o našoj lokaciji, slobodno nas
-                    kontaktirajte.
-                </p>
             </div>
         </div>
     </Layout>

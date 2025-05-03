@@ -11,11 +11,11 @@ const yearNow = new Date().getFullYear();
 
     <Nav />
 
-    <main class="w-full max-w-7xl mx-auto mt-[100px] py-12 px-5 z-0">
+    <main class="w-full max-w-7xl mx-auto mt-[100px] py-10 px-5 z-0">
         <slot></slot>
     </main>
 
-    <footer class="relative border-t-2 py-20">
+    <footer class="relative border-t-2 py-20 bg-white">
         <div class="flex">
             <div class="w-1/2 m-auto flex flex-col items-center justify-center">
                 <img
@@ -61,19 +61,20 @@ const yearNow = new Date().getFullYear();
             </div>
             <div class="w-1/2 flex flex-col justify-between">
                 <div>
-                    <p class="text-2xl font-bold">Kontakt:</p>
-                    <p>
-                        <a class="text-lg" href="mailto:canziva@gmail.com"
-                            >Email: canziva@gmail.com</a
+                    <p class="text-2xl font-bold mb-4">Kontakt:</p>
+                    <p class="text-lg">
+                        <a href="mailto:canziva@gmail.com"
+                            ><b>Email:</b> canziva@gmail.com</a
                         >
                     </p>
-                    <p>
-                        <a class="text-lg" href="tel:+385992002123"
-                            >Tel: +385 99 200 2123</a
+                    <p class="text-lg mt-4">
+                        <a href="tel:+385992002123"
+                            ><b>Tel:</b> +385 99 200 2123</a
                         >
                     </p>
-                    <p class="text-lg">Vranduk 39, 34 000 Požega</p>
-                    <p class="text-lg">Hrvatska</p>
+                    <p class="text-lg mt-4">
+                        <b>Adresa:</b> Vranduk 39, 34 000 Požega
+                    </p>
                 </div>
                 <p class="text-xl font-semibold">
                     &copy; {{ yearNow }} CANZIVA. Sva prava pridržana.
